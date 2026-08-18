@@ -35,7 +35,9 @@
             line-height: 1.6;
         }
 
-        /* NAVIGATION */
+        /* =========================
+           NAVIGATION
+        ========================= */
 
         nav {
             position: fixed;
@@ -73,7 +75,9 @@
             color: var(--purple-dark);
         }
 
-        /* HERO */
+        /* =========================
+           HERO
+        ========================= */
 
         .hero {
             min-height: 100vh;
@@ -152,7 +156,9 @@
             background: var(--purple-light);
         }
 
-        /* SECTIONS */
+        /* =========================
+           GENERAL SECTIONS
+        ========================= */
 
         section {
             padding: 120px 7%;
@@ -179,7 +185,9 @@
             margin-bottom: 22px;
         }
 
-        /* ABOUT */
+        /* =========================
+           ABOUT
+        ========================= */
 
         .about-highlight {
             font-size: clamp(30px, 4vw, 48px);
@@ -189,7 +197,9 @@
             letter-spacing: -1px;
         }
 
-        /* STRENGTHS */
+        /* =========================
+           STRENGTHS
+        ========================= */
 
         .skills {
             display: grid;
@@ -226,7 +236,9 @@
             color: var(--grey);
         }
 
-        /* CASE STUDIES */
+        /* =========================
+           CASE STUDIES
+        ========================= */
 
         .case-intro {
             max-width: 750px;
@@ -312,7 +324,9 @@
             margin-bottom: 6px;
         }
 
-        /* PURPOSE */
+        /* =========================
+           PURPOSE
+        ========================= */
 
         .purpose {
             background: var(--dark);
@@ -322,6 +336,10 @@
 
         .purpose .section-label {
             color: var(--purple);
+        }
+
+        .purpose h2 {
+            color: var(--white);
         }
 
         .purpose-intro {
@@ -340,6 +358,10 @@
 
         .purpose-text p {
             margin-bottom: 25px;
+        }
+
+        .purpose-text strong {
+            color: var(--white);
         }
 
         .purpose-grid {
@@ -378,7 +400,9 @@
             color: var(--purple);
         }
 
-        /* PERSONAL STORY */
+        /* =========================
+           PERSONAL STORY
+        ========================= */
 
         .story-card {
             max-width: 850px;
@@ -398,7 +422,9 @@
             font-size: 18px;
         }
 
-        /* EXPERIENCE */
+        /* =========================
+           EXPERIENCE
+        ========================= */
 
         .experience {
             max-width: 900px;
@@ -432,7 +458,18 @@
             font-size: 17px;
         }
 
-        /* CONTACT */
+        .experience-highlight {
+            margin-top: 25px;
+            display: inline-block;
+            background: var(--purple-light);
+            padding: 14px 20px;
+            border-radius: 12px;
+            font-size: 17px;
+        }
+
+        /* =========================
+           CONTACT
+        ========================= */
 
         .cta {
             background: var(--purple);
@@ -474,7 +511,9 @@
             background: #000;
         }
 
-        /* FOOTER */
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
             display: flex;
@@ -484,7 +523,9 @@
             font-size: 14px;
         }
 
-        /* MOBILE */
+        /* =========================
+           MOBILE
+        ========================= */
 
         @media(max-width:700px) {
 
@@ -547,12 +588,18 @@
     </style>
 </head>
 
+
 <body>
 
-<!-- NAVIGATION -->
+<!-- =========================
+     NAVIGATION
+========================= -->
 
 <nav>
-    <div class="logo">MH.</div>
+
+    <div class="logo">
+        MH.
+    </div>
 
     <ul>
         <li><a href="#about">About</a></li>
@@ -562,10 +609,13 @@
         <li><a href="#experience">Experience</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
+
 </nav>
 
 
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
 
 <header class="hero">
 
@@ -597,7 +647,9 @@
 </header>
 
 
-<!-- ABOUT -->
+<!-- =========================
+     ABOUT
+========================= -->
 
 <section id="about">
 
@@ -633,7 +685,9 @@
 </section>
 
 
-<!-- STRENGTHS -->
+<!-- =========================
+     STRENGTHS
+========================= -->
 
 <section id="strengths">
 
@@ -648,39 +702,74 @@
     <div class="skills">
 
         <div class="skill">
-            <div class="skill-number">01</div>
-            <h3>Problem Solving</h3>
+
+            <div class="skill-number">
+                01
+            </div>
+
+            <h3>
+                Problem Solving
+            </h3>
+
             <p>
                 Finding practical solutions when the obvious solution
                 doesn't exist.
             </p>
+
         </div>
 
+
         <div class="skill">
-            <div class="skill-number">02</div>
-            <h3>People Leadership</h3>
+
+            <div class="skill-number">
+                02
+            </div>
+
+            <h3>
+                People Leadership
+            </h3>
+
             <p>
                 Keeping teams focused, calm and moving forward when
                 situations become difficult.
             </p>
+
         </div>
 
+
         <div class="skill">
-            <div class="skill-number">03</div>
-            <h3>Operations</h3>
+
+            <div class="skill-number">
+                03
+            </div>
+
+            <h3>
+                Operations
+            </h3>
+
             <p>
                 Coordinating people, processes, logistics and resources
                 across complex environments.
             </p>
+
         </div>
 
+
         <div class="skill">
-            <div class="skill-number">04</div>
-            <h3>Project Leadership</h3>
+
+            <div class="skill-number">
+                04
+            </div>
+
+            <h3>
+                Project Leadership
+            </h3>
+
             <p>
                 Bringing different people and priorities together and
                 making sure things actually happen.
             </p>
+
         </div>
 
     </div>
@@ -688,7 +777,9 @@
 </section>
 
 
-<!-- CASE STUDIES -->
+<!-- =========================
+     CASE STUDIES
+========================= -->
 
 <section id="cases">
 
@@ -707,18 +798,22 @@
     </p>
 
 
-    <!-- CASE 1 — BAND -->
+    <!-- CASE 01 -->
 
     <article class="case-study">
 
         <div class="case-header">
 
             <div>
-                <div class="case-number">CASE 01</div>
+
+                <div class="case-number">
+                    CASE 01
+                </div>
 
                 <div class="case-title">
                     The concert that wasn't supposed to happen
                 </div>
+
             </div>
 
             <div class="case-tag">
@@ -727,12 +822,16 @@
 
         </div>
 
+
         <div class="case-body">
 
             <div class="case-grid">
 
                 <div class="case-block">
-                    <h4>The situation</h4>
+
+                    <h4>
+                        The situation
+                    </h4>
 
                     <p>
                         A band from Estonia had a concert in Israel when
@@ -740,10 +839,15 @@
                         flights from Europe to Israel were being cancelled.
                         Their original travel plans were effectively gone.
                     </p>
+
                 </div>
 
+
                 <div class="case-block">
-                    <h4>The challenge</h4>
+
+                    <h4>
+                        The challenge
+                    </h4>
 
                     <p>
                         The band needed to get to Israel, but there was no
@@ -751,10 +855,15 @@
                         disappearing, plans were changing and people were
                         being affected differently.
                     </p>
+
                 </div>
 
+
                 <div class="case-block">
-                    <h4>My response</h4>
+
+                    <h4>
+                        My response
+                    </h4>
 
                     <p>
                         I started solving it person by person. I found
@@ -762,10 +871,15 @@
                         changed and kept coordinating the group throughout
                         the process.
                     </p>
+
                 </div>
 
+
                 <div class="case-block">
-                    <h4>When things changed again</h4>
+
+                    <h4>
+                        When things changed again
+                    </h4>
 
                     <p>
                         Someone became stranded in Warsaw. Another route
@@ -773,15 +887,22 @@
                         meant finding a new solution rather than giving up
                         on the original goal.
                     </p>
+
                 </div>
 
             </div>
 
+
             <div class="case-result">
-                <strong>The result</strong>
+
+                <strong>
+                    The result
+                </strong>
+
                 Within roughly 24 hours, I had rebuilt the travel plan
                 and got almost the entire band to Israel. The concert
                 happened.
+
             </div>
 
         </div>
@@ -789,18 +910,22 @@
     </article>
 
 
-    <!-- CASE 2 — LEADERSHIP CRISIS -->
+    <!-- CASE 02 -->
 
     <article class="case-study">
 
         <div class="case-header">
 
             <div>
-                <div class="case-number">CASE 02</div>
+
+                <div class="case-number">
+                    CASE 02
+                </div>
 
                 <div class="case-title">
                     Taking over when everything changed
                 </div>
+
             </div>
 
             <div class="case-tag">
@@ -809,12 +934,16 @@
 
         </div>
 
+
         <div class="case-body">
 
             <div class="case-grid">
 
                 <div class="case-block">
-                    <h4>The situation</h4>
+
+                    <h4>
+                        The situation
+                    </h4>
 
                     <p>
                         An unexpected leadership crisis put the organisation
@@ -822,10 +951,15 @@
                         off when the situation emerged and returned
                         immediately.
                     </p>
+
                 </div>
 
+
                 <div class="case-block">
-                    <h4>The challenge</h4>
+
+                    <h4>
+                        The challenge
+                    </h4>
 
                     <p>
                         There was no established playbook. Senior
@@ -834,10 +968,15 @@
                         owners and CEOs, alongside banking, legal and
                         finance teams.
                     </p>
+
                 </div>
 
+
                 <div class="case-block">
-                    <h4>My response</h4>
+
+                    <h4>
+                        My response
+                    </h4>
 
                     <p>
                         I stepped into the coordination role, identifying
@@ -845,25 +984,37 @@
                         stakeholders together to establish what needed to
                         happen, when and by whom.
                     </p>
+
                 </div>
 
+
                 <div class="case-block">
-                    <h4>The human side</h4>
+
+                    <h4>
+                        The human side
+                    </h4>
 
                     <p>
-                        Alongside the business response, I worked toward a
-                        constructive transition and tried to handle the
+                        Alongside the business response, I worked toward
+                        a constructive transition and tried to handle the
                         situation as humanely as possible for the people
                         involved.
                     </p>
+
                 </div>
 
             </div>
 
+
             <div class="case-result">
-                <strong>What it taught me</strong>
+
+                <strong>
+                    What it taught me
+                </strong>
+
                 When there is no clear plan, I don't wait for one to
                 appear. I start building one.
+
             </div>
 
         </div>
@@ -871,18 +1022,22 @@
     </article>
 
 
-    <!-- CASE 3 — WISE -->
+    <!-- CASE 03 -->
 
     <article class="case-study">
 
         <div class="case-header">
 
             <div>
-                <div class="case-number">CASE 03</div>
+
+                <div class="case-number">
+                    CASE 03
+                </div>
 
                 <div class="case-title">
                     A day built around social impact
                 </div>
+
             </div>
 
             <div class="case-tag">
@@ -891,12 +1046,16 @@
 
         </div>
 
+
         <div class="case-body">
 
             <div class="case-grid">
 
                 <div class="case-block">
-                    <h4>The situation</h4>
+
+                    <h4>
+                        The situation
+                    </h4>
 
                     <p>
                         During Wise Summer Days in Tartu, more than 1,000
@@ -904,10 +1063,15 @@
                         for a full day of social-impact activities involving
                         around 300 participants.
                     </p>
+
                 </div>
 
+
                 <div class="case-block">
-                    <h4>The challenge</h4>
+
+                    <h4>
+                        The challenge
+                    </h4>
 
                     <p>
                         The 300 participants were distributed across
@@ -915,10 +1079,15 @@
                         ranging from community and renovation work to
                         activities with children and environmental projects.
                     </p>
+
                 </div>
 
+
                 <div class="case-block">
-                    <h4>My responsibility</h4>
+
+                    <h4>
+                        My responsibility
+                    </h4>
 
                     <p>
                         I coordinated the organisations and their team
@@ -926,25 +1095,37 @@
                         materials and everything needed to make the day
                         work across multiple locations.
                     </p>
+
                 </div>
 
+
                 <div class="case-block">
-                    <h4>Additional responsibility</h4>
+
+                    <h4>
+                        Additional responsibility
+                    </h4>
 
                     <p>
                         During the same event, I also managed the Co-Team,
                         responsible for the operational infrastructure
                         supporting the wider event.
                     </p>
+
                 </div>
 
             </div>
 
+
             <div class="case-result">
-                <strong>The result</strong>
+
+                <strong>
+                    The result
+                </strong>
+
                 A complex social-impact programme involving around 300
                 people across multiple organisations and locations was
                 successfully coordinated as part of a 1,000+ person event.
+
             </div>
 
         </div>
@@ -952,18 +1133,22 @@
     </article>
 
 
-    <!-- CASE 4 — SCHOOL TRIPS -->
+    <!-- CASE 04 -->
 
     <article class="case-study">
 
         <div class="case-header">
 
             <div>
-                <div class="case-number">CASE 04</div>
+
+                <div class="case-number">
+                    CASE 04
+                </div>
 
                 <div class="case-title">
                     Making international travel look easy
                 </div>
+
             </div>
 
             <div class="case-tag">
@@ -972,22 +1157,31 @@
 
         </div>
 
+
         <div class="case-body">
 
             <div class="case-grid">
 
                 <div class="case-block">
-                    <h4>The situation</h4>
+
+                    <h4>
+                        The situation
+                    </h4>
 
                     <p>
                         I volunteered to coordinate international school
                         trips for my son's class, including exchange travel
                         to Germany and a later trip to Rome.
                     </p>
+
                 </div>
 
+
                 <div class="case-block">
-                    <h4>The challenge</h4>
+
+                    <h4>
+                        The challenge
+                    </h4>
 
                     <p>
                         Around 20–22 students, parents and teachers meant
@@ -995,10 +1189,15 @@
                         travel connections, insurance and individual
                         questions to coordinate.
                     </p>
+
                 </div>
 
+
                 <div class="case-block">
-                    <h4>My response</h4>
+
+                    <h4>
+                        My response
+                    </h4>
 
                     <p>
                         I became the central coordination point, managing
@@ -1006,25 +1205,37 @@
                         payments, insurance and communication before and
                         during the trips.
                     </p>
+
                 </div>
 
+
                 <div class="case-block">
-                    <h4>The principle</h4>
+
+                    <h4>
+                        The principle
+                    </h4>
 
                     <p>
                         Good problem solving isn't always about fixing a
                         disaster. Sometimes it means doing enough planning
                         that the disaster never happens.
                     </p>
+
                 </div>
 
             </div>
 
+
             <div class="case-result">
-                <strong>The result</strong>
+
+                <strong>
+                    The result
+                </strong>
+
                 Multiple international trips were successfully delivered,
                 allowing students, parents and teachers to focus on the
                 experience rather than the logistics behind it.
+
             </div>
 
         </div>
@@ -1032,18 +1243,22 @@
     </article>
 
 
-    <!-- CASE 5 — SHIPMENT -->
+    <!-- CASE 05 -->
 
     <article class="case-study">
 
         <div class="case-header">
 
             <div>
-                <div class="case-number">CASE 05</div>
+
+                <div class="case-number">
+                    CASE 05
+                </div>
 
                 <div class="case-title">
                     The December 31st shipment
                 </div>
+
             </div>
 
             <div class="case-tag">
@@ -1052,12 +1267,16 @@
 
         </div>
 
+
         <div class="case-body">
 
             <div class="case-grid">
 
                 <div class="case-block">
-                    <h4>The situation</h4>
+
+                    <h4>
+                        The situation
+                    </h4>
 
                     <p>
                         A year-end shipment was at risk. The container
@@ -1065,20 +1284,30 @@
                         problems and the bill of lading was not going
                         to be ready in time.
                     </p>
+
                 </div>
 
+
                 <div class="case-block">
-                    <h4>The challenge</h4>
+
+                    <h4>
+                        The challenge
+                    </h4>
 
                     <p>
                         The material needed to leave within the current
                         year. Waiting until January wasn't an acceptable
                         outcome.
                     </p>
+
                 </div>
 
+
                 <div class="case-block">
-                    <h4>My response</h4>
+
+                    <h4>
+                        My response
+                    </h4>
 
                     <p>
                         I identified the people who could influence each
@@ -1086,25 +1315,37 @@
                         and coordinated the moving pieces until we found
                         a way forward.
                     </p>
+
                 </div>
 
+
                 <div class="case-block">
-                    <h4>The bigger picture</h4>
+
+                    <h4>
+                        The bigger picture
+                    </h4>
 
                     <p>
                         Month-end and especially year-end were recurring
                         periods of intense operational pressure, requiring
                         quick decisions and constant coordination.
                     </p>
+
                 </div>
 
             </div>
 
+
             <div class="case-result">
-                <strong>The result</strong>
+
+                <strong>
+                    The result
+                </strong>
+
                 I was able to resolve these kinds of issues and keep
                 shipments moving toward the required month-end or
                 year-end deadline.
+
             </div>
 
         </div>
@@ -1114,7 +1355,9 @@
 </section>
 
 
-<!-- PURPOSE / WHAT I WANT -->
+<!-- =========================
+     WHAT I'M LOOKING FOR
+========================= -->
 
 <section id="purpose" class="purpose">
 
@@ -1127,9 +1370,11 @@
         a job.
     </h2>
 
+
     <div class="purpose-intro">
-        I need a reason to care about what I do.
+        I want a reason to care.
     </div>
+
 
     <div class="purpose-text">
 
@@ -1139,31 +1384,82 @@
         </p>
 
         <p>
-            But the work that has meant the most to me has always had
-            something more behind it.
+            And I've learned that
+            <strong>
+                the work itself doesn't have to be extraordinary for the
+                outcome to be meaningful.
+            </strong>
         </p>
 
         <p>
-            <strong>A cause. A purpose. A reason why the people involved
-            should care.</strong>
+            A cause doesn't have to mean a charity.<br>
+            Purpose doesn't have to mean a social-impact organisation.<br>
+            And a common goal doesn't have to mean an event.
         </p>
 
         <p>
-            Wise Summer Days was a perfect example. I got to do what I
-            naturally love — organise, coordinate, solve problems and
-            handle whatever went wrong — but the outcome wasn't simply
-            that an event ran successfully.
+            It can exist in almost any business, in almost any role.
         </p>
 
         <p>
-            People benefited. Organisations received help. Participants
-            got to experience what it feels like to contribute to
-            something bigger than themselves.
+            It can be a team trying to build something better for its
+            customers. It can be an operations team making people's lives
+            easier. It can be a company solving a problem that genuinely
+            matters.
         </p>
 
         <p>
-            That's the kind of work I want more of.
+            It can be a group of people who trust each other, care about
+            what they're building and want to give their best because
+            they believe in where they're going.
         </p>
+
+        <p>
+            <strong>
+                Even the most ordinary work becomes meaningful when you
+                understand who benefits from it and why it matters.
+            </strong>
+        </p>
+
+    </div>
+
+
+    <div class="purpose-intro" style="margin-top: 80px;">
+        That's what I'm looking for.
+    </div>
+
+
+    <div class="purpose-text">
+
+        <p>
+            I want to be part of something where people are
+            <strong>working toward a common goal</strong>, rather than
+            simply completing tasks.
+        </p>
+
+        <p>
+            Where I can bring people together, build trust and help a
+            team become something more than a collection of individuals.
+        </p>
+
+        <p>
+            Where solving a difficult problem isn't just about getting it
+            off someone's desk —
+            <strong>
+                it's about creating a better outcome for someone.
+            </strong>
+        </p>
+
+        <p>
+            And where I can look at the work I'm doing and understand:
+        </p>
+
+    </div>
+
+
+    <div class="purpose-quote">
+
+        This matters<span>.</span>
 
     </div>
 
@@ -1172,11 +1468,13 @@
 
         <div class="purpose-card">
 
-            <h3>Solve difficult problems.</h3>
+            <h3>
+                Social impact
+            </h3>
 
             <p>
-                Give me projects where there isn't an obvious playbook
-                and let me figure out how to make them work.
+                Sometimes the purpose is directly helping people,
+                communities or causes.
             </p>
 
         </div>
@@ -1184,11 +1482,13 @@
 
         <div class="purpose-card">
 
-            <h3>Bring people together.</h3>
+            <h3>
+                Building something
+            </h3>
 
             <p>
-                Build teams, create trust and get people moving toward
-                a common goal.
+                Sometimes it's creating a product, service or company
+                that genuinely makes something better.
             </p>
 
         </div>
@@ -1196,11 +1496,14 @@
 
         <div class="purpose-card">
 
-            <h3>Create meaningful impact.</h3>
+            <h3>
+                Making things work
+            </h3>
 
             <p>
-                Work for something that benefits people, a community,
-                a mission or a bigger purpose.
+                Sometimes the impact is less visible — improving a
+                broken process, supporting customers or making people's
+                work easier.
             </p>
 
         </div>
@@ -1208,12 +1511,14 @@
 
         <div class="purpose-card">
 
-            <h3>Build something people care about.</h3>
+            <h3>
+                Building the team
+            </h3>
 
             <p>
-                Create teams where people don't just work together —
-                they genuinely want to give their best for something
-                they believe in.
+                Sometimes the greatest impact is creating a team where
+                people trust each other, care about the goal and want to
+                give their best.
             </p>
 
         </div>
@@ -1221,17 +1526,47 @@
     </div>
 
 
-    <div class="purpose-quote">
+    <div class="purpose-text" style="margin-top: 65px;">
 
-        I want to bring people together around something
-        <span>worth doing.</span>
+        <p>
+            The industry matters less to me than the purpose behind
+            the work.
+        </p>
+
+        <p>
+            I want to bring my energy, problem-solving ability and
+            ability to bring people together to something where
+            <strong>
+                the people involved care about the outcome.
+            </strong>
+        </p>
+
+    </div>
+
+
+    <div class="purpose-quote" style="margin-top: 65px;">
+
+        Give me a difficult problem.<br>
+        Give me good people.<br>
+        Give us something <span>worth achieving.</span>
+
+        <div style="
+            font-size: 0.55em;
+            margin-top: 35px;
+            line-height: 1.15;
+            color: #D8D3DB;
+        ">
+            I'll care about making it happen.
+        </div>
 
     </div>
 
 </section>
 
 
-<!-- PERSONAL STORY -->
+<!-- =========================
+     PERSONAL STORY
+========================= -->
 
 <section>
 
@@ -1243,6 +1578,7 @@
         Apparently, I've<br>
         always been this way.
     </h2>
+
 
     <div class="story-card">
 
@@ -1277,7 +1613,9 @@
 </section>
 
 
-<!-- EXPERIENCE -->
+<!-- =========================
+     EXPERIENCE
+========================= -->
 
 <section id="experience">
 
@@ -1289,6 +1627,7 @@
         Where I've<br>
         done it.
     </h2>
+
 
     <div class="experience">
 
@@ -1303,29 +1642,23 @@
             </h3>
 
             <p>
-                International business development, commercial operations,
-                people leadership, logistics and cross-border operations.
-                Led a 20+ person operational environment and contributed
-                to significant international revenue growth.
+                Led international business development and commercial
+                operations in the e-waste sector, while overseeing a
+                20+ person operational environment spanning office,
+                logistics and warehouse functions.
             </p>
 
-        </div>
+            <p style="margin-top: 15px;">
+                Managed international client relationships, market
+                expansion, logistics and cross-border operations, while
+                taking responsibility for keeping the wider operation
+                moving.
+            </p>
 
-        <div class="experience-item">
-
-            <div class="experience-meta">
-                International Operations
+            <div class="experience-highlight">
+                Annual revenue grew from approximately
+                <strong>$1M → $20M</strong> over seven years.
             </div>
-
-            <h3>
-                People, Projects & Operations
-            </h3>
-
-            <p>
-                Experience coordinating people, complex workflows,
-                international travel, logistics, projects and
-                time-critical operational situations.
-            </p>
 
         </div>
 
@@ -1334,7 +1667,9 @@
 </section>
 
 
-<!-- CONTACT -->
+<!-- =========================
+     CONTACT
+========================= -->
 
 <section id="contact" class="cta">
 
@@ -1352,16 +1687,23 @@
         bring people together and work toward something that matters.
     </p>
 
+
     <div class="buttons">
 
-        <a class="button"
-           href="https://www.linkedin.com/in/maria-hõbesalu-2a1014187"
-           target="_blank">
+        <a
+            class="button"
+            href="https://www.linkedin.com/in/maria-hõbesalu-2a1014187"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
             LinkedIn →
         </a>
 
-        <a class="button"
-           href="mailto:mhobesalu@gmail.com">
+
+        <a
+            class="button"
+            href="mailto:mhobesalu@gmail.com"
+        >
             mhobesalu@gmail.com →
         </a>
 
@@ -1370,7 +1712,9 @@
 </section>
 
 
-<!-- FOOTER -->
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
@@ -1383,6 +1727,7 @@
     </div>
 
 </footer>
+
 
 </body>
 </html>
