@@ -11,11 +11,12 @@
             --purple: #C3B1E1;
             --purple-light: #EEE7F6;
             --purple-dark: #8064A2;
+            --purple-deep: #62467F;
             --dark: #1C1A1F;
             --grey: #68636D;
-            --background: #FAF9F7;
+            --background: #F5F0F8;
             --white: #FFFFFF;
-            --border: #E4DFE8;
+            --border: #DED6E5;
         }
 
         * {
@@ -49,9 +50,9 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 7%;
-            background: rgba(250,249,247,0.92);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(228,223,232,0.7);
+            background: rgba(245,240,248,0.88);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(222,214,229,0.75);
         }
 
         .logo {
@@ -86,6 +87,10 @@
             padding: 140px 7% 100px;
             position: relative;
             overflow: hidden;
+            background:
+                radial-gradient(circle at 85% 25%, rgba(195,177,225,0.75), transparent 32%),
+                radial-gradient(circle at 70% 90%, rgba(238,231,246,0.95), transparent 35%),
+                var(--background);
         }
 
         .hero-content {
@@ -148,12 +153,37 @@
 
         .hero-shape {
             position: absolute;
-            right: -120px;
-            top: 18%;
-            width: 480px;
-            height: 480px;
+            right: -150px;
+            top: 12%;
+            width: 560px;
+            height: 560px;
             border-radius: 50%;
-            background: var(--purple-light);
+            background: var(--purple);
+            opacity: 0.42;
+        }
+
+        .hero-shape::before {
+            content: "";
+            position: absolute;
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            background: var(--purple-deep);
+            opacity: 0.25;
+            left: -100px;
+            bottom: 40px;
+        }
+
+        .hero-shape::after {
+            content: "";
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: var(--white);
+            opacity: 0.45;
+            left: 90px;
+            top: 80px;
         }
 
         /* =========================
@@ -273,34 +303,32 @@
         }
 
         /* =========================
-           PROJECT / SERVICE WORK
+           LEMONID
         ========================= */
 
-        .project-work {
-            margin-top: 75px;
-            padding-top: 60px;
-            border-top: 1px solid var(--border);
+        .lemonid {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 45px;
+            margin-top: 25px;
         }
 
-        .project-work h3 {
-            font-size: clamp(28px, 4vw, 42px);
-            margin-bottom: 20px;
-            letter-spacing: -1px;
+        .lemonid-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 30px;
+            margin-bottom: 25px;
         }
 
-        .project-work p {
-            color: var(--grey);
-            font-size: 18px;
-            max-width: 850px;
-            margin-bottom: 18px;
+        .lemonid h3 {
+            font-size: clamp(30px, 4vw, 46px);
+            letter-spacing: -1.5px;
+            line-height: 1;
         }
 
-        .project-work strong {
-            color: var(--dark);
-        }
-
-        .project-badge {
-            display: inline-block;
+        .lemonid-badge {
             background: var(--purple-light);
             color: var(--purple-dark);
             padding: 10px 16px;
@@ -309,7 +337,39 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 18px;
+            white-space: nowrap;
+        }
+
+        .lemonid-intro {
+            color: var(--grey);
+            font-size: 19px;
+            max-width: 850px;
+            margin-bottom: 30px;
+        }
+
+        .selected-work {
+            margin-top: 35px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .selected-project {
+            padding: 20px;
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            background: var(--background);
+        }
+
+        .selected-project strong {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--dark);
+        }
+
+        .selected-project span {
+            font-size: 14px;
+            color: var(--grey);
         }
 
         /* =========================
@@ -466,7 +526,7 @@
         }
 
         /* =========================
-           STARTUP / GROWTH POSITIONING
+           GROWTH / AMBIGUITY
         ========================= */
 
         .growth-section {
@@ -623,7 +683,8 @@
             }
 
             .case-grid,
-            .purpose-grid {
+            .purpose-grid,
+            .selected-work {
                 grid-template-columns: 1fr;
             }
 
@@ -646,6 +707,14 @@
                 margin-left: 18px;
             }
 
+            .lemonid {
+                padding: 30px;
+            }
+
+            .lemonid-title {
+                flex-direction: column;
+            }
+
             .cta {
                 margin: 0 5%;
                 padding: 70px 8%;
@@ -658,9 +727,10 @@
             }
 
             .hero-shape {
-                width: 260px;
-                height: 260px;
-                right: -120px;
+                width: 300px;
+                height: 300px;
+                right: -150px;
+                top: 20%;
             }
         }
     </style>
@@ -780,6 +850,9 @@
 
     <div class="experience">
 
+
+        <!-- KAT METAL -->
+
         <div class="experience-item">
 
             <div class="experience-meta">
@@ -851,45 +924,109 @@
         </div>
 
 
-        <!-- PROJECT / SERVICE WORK -->
+        <!-- LEMONID -->
 
-        <div class="project-work">
+        <div class="experience-item">
 
-            <div class="project-badge">
-                Project & Service Work
+            <div class="experience-meta">
+                LeMonID • 2016 — Present
             </div>
 
-            <h3>
-                I don't only work through employment.
-            </h3>
+            <div class="lemonid">
 
-            <p>
-                Alongside my career, I have also taken on projects and
-                provided services through my own companies.
-            </p>
+                <div class="lemonid-title">
 
-            <p>
-                One example is my work connected to Wise. For
-                <strong>Wise Summer Days</strong>, I was brought in through
-                <strong>Jolos, an event agency specialising in live
-                experiences and brand events</strong>, to organise and
-                coordinate the social-impact track and other event
-                operations.
-            </p>
+                    <h3>
+                        Founder / CEO
+                    </h3>
 
-            <p>
-                For <strong>Mission Days</strong>, Wise approached me
-                directly to help develop and coordinate the social-impact
-                element of their internal conference, which was taking
-                place simultaneously in Tallinn, Budapest and Singapore.
-            </p>
+                    <div class="lemonid-badge">
+                        Project & Service Work
+                    </div>
 
-            <p>
-                This is also a way I am open to working today: through a
-                permanent role, a project, or a specific service where
-                someone needs a person to come in, take ownership and
-                make something work.
-            </p>
+                </div>
+
+                <p class="lemonid-intro">
+                    Alongside my employment, I have run my own company
+                    through which I have delivered project and service
+                    work for organisations and companies.
+                </p>
+
+                <p class="lemonid-intro">
+                    The work has ranged from large-scale people and
+                    social-impact projects to event production,
+                    project management, communications and situations
+                    where someone needed to take ownership and make a
+                    complicated project work.
+                </p>
+
+                <p class="lemonid-intro">
+                    Some projects were delivered directly for clients,
+                    while others were delivered through partners such as
+                    <strong>Jolos</strong>, an event agency specialising
+                    in live experiences and brand events.
+                </p>
+
+                <div class="selected-work">
+
+                    <div class="selected-project">
+                        <strong>Wise Summer Days</strong>
+                        <span>Delivered through Jolos • social-impact coordination and event operations</span>
+                    </div>
+
+                    <div class="selected-project">
+                        <strong>Wise Mission Days 2020</strong>
+                        <span>Directly engaged by Wise • social-impact project across Tallinn, Budapest and Singapore</span>
+                    </div>
+
+                    <div class="selected-project">
+                        <strong>Bolt Summer Summit 2021</strong>
+                        <span>Delivered through Jolos • Customer First social-impact track</span>
+                    </div>
+
+                    <div class="selected-project">
+                        <strong>Swedbank Annual Gala 2018</strong>
+                        <span>Project and event support</span>
+                    </div>
+
+                    <div class="selected-project">
+                        <strong>Nortal Party Night 2018</strong>
+                        <span>Project and event support</span>
+                    </div>
+
+                    <div class="selected-project">
+                        <strong>Estonian Cultural Days in New York</strong>
+                        <span>2017 • delivered through WAF</span>
+                    </div>
+
+                    <div class="selected-project">
+                        <strong>George Michael Tribute Concert</strong>
+                        <span>2017 • delivered through WAF</span>
+                    </div>
+
+                    <div class="selected-project">
+                        <strong>Sisustusmess Interjöör</strong>
+                        <span>2017 • project support</span>
+                    </div>
+
+                    <div class="selected-project">
+                        <strong>Baumer Impact Consulting</strong>
+                        <span>Project management and technical/project support</span>
+                    </div>
+
+                    <div class="selected-project">
+                        <strong>Baumer projects</strong>
+                        <span>Horses Help • Effect.org • InFLEWence Trips • Every Child Needs a Family • Free to Believe</span>
+                    </div>
+
+                </div>
+
+                <div class="experience-highlight">
+                    The common thread:
+                    <strong>take ownership → figure it out → make it happen.</strong>
+                </div>
+
+            </div>
 
         </div>
 
@@ -1579,8 +1716,7 @@
 
 
     <!-- =========================
-         WHERE I CAN MAKE THE
-         BIGGEST DIFFERENCE
+         GROWTH / NEXT BIG MOVE
     ========================= -->
 
     <div class="growth-section">
@@ -1632,41 +1768,6 @@
                 figuring out what the next move should be.
             </p>
 
-            <p>
-                I don't necessarily need a perfectly defined role.
-                In fact, I'm often most useful when the destination is
-                clear but the route isn't.
-            </p>
-
-            <p>
-                Give me a problem, an objective, a team that needs
-                direction, or a situation that has become complicated.
-                I don't need every step mapped out before I start.
-            </p>
-
-            <p>
-                <strong>
-                    I need to understand what we're trying to achieve —
-                    then I'll figure out what needs to happen.
-                </strong>
-            </p>
-
-            <p>
-                That could be inside a startup, a growing company, or a
-                large international organisation. The size and structure
-                of the company matter less to me than having room to take
-                ownership and make things better.
-            </p>
-
-            <p>
-                I don't see structure and autonomy as opposites. Large
-                organisations can have enormous complexity, and sometimes
-                that complexity is exactly where I can be useful —
-                connecting teams, navigating stakeholders, fixing gaps
-                between departments and taking ownership of problems that
-                don't fit neatly into one person's job description.
-            </p>
-
         </div>
 
 
@@ -1678,6 +1779,85 @@
                 At the point where someone needs to make the next big
                 thing happen.
             </span>
+        </div>
+
+
+        <!-- NEW ROLE POSITIONING -->
+
+        <div style="
+            margin-top: 85px;
+            padding-top: 70px;
+            border-top: 1px solid #3C3840;
+        ">
+
+            <div class="section-label">
+                How I work best
+            </div>
+
+            <div class="purpose-intro">
+                I don't need a clearly defined role.<br>
+                I need a clearly defined outcome.
+            </div>
+
+            <div class="purpose-text">
+
+                <p>
+                    I don't need every step mapped out before I start.
+                    In fact, I'm often most useful when the destination
+                    is clear but the route isn't.
+                </p>
+
+                <p>
+                    Give me a problem, an objective, a team that needs
+                    direction, or a situation that has become complicated.
+                    I need to understand what we're trying to achieve —
+                    <strong>
+                        then I'll figure out what needs to happen.
+                    </strong>
+                </p>
+
+                <p>
+                    That can absolutely exist inside a large corporation.
+                    I can work within established structures, understand
+                    business goals and operate with accountability. What I
+                    don't want is for my contribution to be limited to a
+                    checklist that ends at the edge of my job description.
+                </p>
+
+                <p>
+                    I don't see structure and autonomy as opposites.
+                </p>
+
+                <p>
+                    Large organisations can have enormous complexity, and
+                    sometimes that complexity is exactly where I can be
+                    useful — connecting teams, navigating stakeholders,
+                    fixing gaps between departments and taking ownership
+                    of problems that don't fit neatly into one person's
+                    job description.
+                </p>
+
+                <p>
+                    The same applies to a startup or growing company,
+                    where the challenge may be figuring out the next move,
+                    building the right structure or turning an opportunity
+                    into something real.
+                </p>
+
+            </div>
+
+            <div class="growth-quote">
+
+                <span>
+                    I don't need to be told exactly what my job is.
+                </span>
+                <br><br>
+
+                Tell me what we're trying to achieve.<br>
+                I'll figure out how to help us get there.
+
+            </div>
+
         </div>
 
     </div>
@@ -1820,7 +2000,7 @@
 
 
     <!-- =========================
-         ANOTHER WAY TO WORK TOGETHER
+         WORK OPTIONS
     ========================= -->
 
     <div class="work-options">
