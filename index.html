@@ -141,7 +141,21 @@
             line-height: 1.12;
             letter-spacing: -1.5px;
             max-width: 850px;
-            margin-bottom: 30px;
+            margin-bottom: 24px;
+        }
+
+        /* NEW: ROLE TARGETING LINE */
+
+        .target-roles {
+            display: inline-block;
+            margin-bottom: 28px;
+            padding: 10px 16px;
+            background: rgba(238,231,246,0.9);
+            border: 1px solid rgba(195,177,225,0.65);
+            border-radius: 100px;
+            color: var(--purple-dark);
+            font-size: 14px;
+            font-weight: 700;
         }
 
         .intro {
@@ -289,12 +303,24 @@
             margin-bottom: 15px;
         }
 
+        /* NEW: CLEAR SENIORITY FRAMING */
+
+        .progression-label {
+            margin-top: 32px;
+            margin-bottom: 13px;
+            color: var(--purple-dark);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
         .career-progression {
             display: flex;
             align-items: center;
             flex-wrap: wrap;
             gap: 10px;
-            margin: 35px 0 40px;
+            margin: 0 0 40px;
         }
 
         .career-step {
@@ -304,6 +330,17 @@
             border-radius: 100px;
             font-size: 14px;
             font-weight: 700;
+        }
+
+        .career-step.starting {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--grey);
+        }
+
+        .career-step.current {
+            background: var(--purple);
+            color: var(--dark);
         }
 
         .career-arrow {
@@ -422,7 +459,7 @@
         }
 
         .case-header {
-            padding: 32px 42px 28px;
+            padding: 32px 42px 22px;
             display: flex;
             justify-content: space-between;
             gap: 30px;
@@ -457,7 +494,7 @@
 
         .case-body {
             border-top: 1px solid var(--border);
-            padding: 32px 42px 40px;
+            padding: 28px 42px 40px;
         }
 
         .case-grid {
@@ -539,8 +576,8 @@
 
         .outcome-section {
             max-width: 950px;
-            margin-top: 75px;
-            padding-top: 65px;
+            margin-top: 70px;
+            padding-top: 60px;
             border-top: 1px solid #3C3840;
         }
 
@@ -548,7 +585,7 @@
             font-size: clamp(32px, 4vw, 52px);
             line-height: 1.05;
             letter-spacing: -2px;
-            margin-bottom: 28px;
+            margin-bottom: 20px;
             color: var(--white);
         }
 
@@ -557,7 +594,7 @@
             line-height: 1.15;
             color: var(--white);
             max-width: 850px;
-            margin-bottom: 35px;
+            margin-bottom: 30px;
         }
 
         .outcome-text {
@@ -567,11 +604,11 @@
         }
 
         .outcome-text p {
-            margin-bottom: 23px;
+            margin-bottom: 20px;
         }
 
         .outcome-quote {
-            margin-top: 40px;
+            margin-top: 35px;
             padding: 28px 32px;
             border-left: 5px solid var(--purple);
             background: #262329;
@@ -589,8 +626,8 @@
         ========================= */
 
         .corporate-section {
-            margin-top: 65px;
-            padding-top: 60px;
+            margin-top: 55px;
+            padding-top: 55px;
             border-top: 1px solid #3C3840;
             max-width: 950px;
         }
@@ -600,7 +637,7 @@
             line-height: 1.05;
             letter-spacing: -1.5px;
             color: var(--white);
-            margin-bottom: 28px;
+            margin-bottom: 25px;
         }
 
         .corporate-text {
@@ -610,7 +647,7 @@
         }
 
         .corporate-text p {
-            margin-bottom: 23px;
+            margin-bottom: 20px;
         }
 
         .corporate-text strong {
@@ -622,7 +659,7 @@
         ========================= */
 
         .purpose-quote {
-            margin-top: 75px;
+            margin-top: 65px;
             max-width: 900px;
             font-size: clamp(32px, 5vw, 62px);
             line-height: 1.02;
@@ -639,14 +676,14 @@
 
         .work-options {
             max-width: 950px;
-            margin-top: 85px;
-            padding-top: 65px;
+            margin-top: 65px;
+            padding-top: 55px;
             border-top: 1px solid #3C3840;
         }
 
         .work-options .purpose-intro {
             margin-top: 18px;
-            margin-bottom: 35px;
+            margin-bottom: 30px;
         }
 
         /* =========================
@@ -735,6 +772,11 @@
                 top: 15%;
             }
 
+            .target-roles {
+                border-radius: 16px;
+                line-height: 1.4;
+            }
+
             .stats {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -750,7 +792,7 @@
 
             .case-header {
                 flex-direction: column;
-                padding: 28px 30px 24px;
+                padding: 28px 30px 22px;
             }
 
             .case-body {
@@ -848,6 +890,12 @@
 
         <div class="tagline">
             I solve problems that don't have obvious solutions.
+        </div>
+
+        <!-- NEW: CLEAR RECRUITER LANDING POINT -->
+
+        <div class="target-roles">
+            Best fit: Head of Operations • General Manager • Chief of Staff • Senior Project / Operations roles
         </div>
 
         <p class="intro">
@@ -969,12 +1017,18 @@
             </div>
 
             <h3>
-                From Assistant to Business Development Manager
+                Increasing responsibility across four roles
             </h3>
+
+            <!-- NEW: EXPLICIT SENIORITY FRAMING -->
+
+            <div class="progression-label">
+                Career progression
+            </div>
 
             <div class="career-progression">
 
-                <div class="career-step">
+                <div class="career-step starting">
                     Assistant
                 </div>
 
@@ -998,7 +1052,7 @@
                     →
                 </div>
 
-                <div class="career-step">
+                <div class="career-step current">
                     Business Development Manager
                 </div>
 
@@ -1683,16 +1737,10 @@
         </p>
 
         <p>
-            A cause doesn't have to mean a charity. Purpose doesn't have
-            to mean a social-impact organisation. It can be a company
-            solving a difficult problem, a team building something useful,
-            or an organisation trying to become better at what it does.
-        </p>
-
-        <p>
-            What matters to me is being able to understand
-            <strong>why the work matters</strong> and feel that the people
-            around me care about achieving it.
+            Purpose can exist in a charity, a growing company, a large
+            organisation or a team building something useful. What matters
+            to me is understanding <strong>why the work matters</strong>
+            and working with people who genuinely care about achieving it.
         </p>
 
     </div>
@@ -1707,7 +1755,7 @@
         </div>
 
         <h3>
-            I don't need a clearly defined role.
+            I don't need a perfectly defined role.
         </h3>
 
         <div class="outcome-lead">
@@ -1717,13 +1765,13 @@
         <div class="outcome-text">
 
             <p>
-                In fact, I'm often most useful when the destination is
-                clear but the route isn't.
+                I'm often most useful when the destination is clear but
+                the route isn't.
             </p>
 
             <p>
                 Give me a problem, an objective, a team that needs
-                direction, or a situation that has become complicated.
+                direction or a situation that has become complicated.
                 I don't need every step mapped out before I start.
             </p>
 
@@ -1735,10 +1783,10 @@
             </p>
 
             <p>
-                That could mean entering a new market, fixing an
-                operational problem, building a team, taking ownership of
-                a complicated project, improving how departments work
-                together or figuring out what the next move should be.
+                That could mean fixing an operational problem, taking
+                ownership of a complicated project, improving how
+                departments work together, building a team or figuring
+                out the next move.
             </p>
 
         </div>
@@ -1772,9 +1820,9 @@
 
             <p>
                 I can absolutely see myself working inside a large
-                international organisation. In fact, large organisations
-                can have enormous complexity — and sometimes that
-                complexity is exactly where I can be useful.
+                international organisation. Large organisations can have
+                enormous complexity — and sometimes that complexity is
+                exactly where I can be useful.
             </p>
 
             <p>
@@ -1785,9 +1833,9 @@
             </p>
 
             <p>
-                I don't need to work somewhere chaotic. I just don't want
-                to be limited by a job description when the situation
-                clearly requires something more.
+                I don't need chaos or the absence of structure. I just
+                don't want to be limited by a job description when the
+                situation clearly requires something more.
             </p>
 
             <p>
@@ -1804,7 +1852,7 @@
     </div>
 
 
-    <!-- GROWTH / STARTUP -->
+    <!-- WHERE I CAN MAKE THE BIGGEST DIFFERENCE -->
 
     <div class="corporate-section">
 
@@ -1841,17 +1889,11 @@
             </p>
 
             <p>
-                I like being close to the action. I like figuring out what
-                needs to happen, bringing the right people together,
-                building structure where there isn't enough of it yet,
-                and turning <strong>“we should”</strong> into
+                I like being close to the action: figuring out what needs
+                to happen, bringing the right people together, building
+                structure where there isn't enough of it yet, and turning
+                <strong>“we should”</strong> into
                 <strong>“it's done.”</strong>
-            </p>
-
-            <p>
-                I don't necessarily need a perfectly defined role. In
-                fact, I think I'm often most useful when the role is still
-                being defined.
             </p>
 
         </div>
@@ -1908,13 +1950,10 @@
             </p>
 
             <p>
-                Sometimes you need another permanent person.
-            </p>
-
-            <p>
-                Sometimes you need someone who can walk into the mess,
-                understand the outcome that matters and take ownership
-                of getting there.
+                Sometimes you need another permanent person. Sometimes
+                you need someone who can walk into the mess, understand
+                the outcome that matters and take ownership of getting
+                there.
             </p>
 
             <p>
