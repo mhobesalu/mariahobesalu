@@ -141,7 +141,26 @@
             line-height: 1.12;
             letter-spacing: -1.5px;
             max-width: 850px;
+            margin-bottom: 20px;
+        }
+
+        /* NEW: ROLE ANCHOR */
+
+        .role-anchor {
+            display: inline-block;
             margin-bottom: 30px;
+            padding: 10px 16px;
+            border: 1px solid rgba(128,100,162,0.35);
+            background: rgba(238,231,246,0.75);
+            border-radius: 100px;
+            color: var(--purple-dark);
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .role-anchor span {
+            color: var(--grey);
+            font-weight: 400;
         }
 
         .intro {
@@ -422,7 +441,7 @@
         }
 
         .case-header {
-            padding: 32px 42px 28px;
+            padding: 32px 42px 24px;
             display: flex;
             justify-content: space-between;
             gap: 30px;
@@ -457,7 +476,7 @@
 
         .case-body {
             border-top: 1px solid var(--border);
-            padding: 32px 42px 40px;
+            padding: 28px 42px 40px;
         }
 
         .case-grid {
@@ -539,8 +558,8 @@
 
         .outcome-section {
             max-width: 950px;
-            margin-top: 75px;
-            padding-top: 65px;
+            margin-top: 65px;
+            padding-top: 60px;
             border-top: 1px solid #3C3840;
         }
 
@@ -548,7 +567,7 @@
             font-size: clamp(32px, 4vw, 52px);
             line-height: 1.05;
             letter-spacing: -2px;
-            margin-bottom: 28px;
+            margin-bottom: 22px;
             color: var(--white);
         }
 
@@ -557,7 +576,7 @@
             line-height: 1.15;
             color: var(--white);
             max-width: 850px;
-            margin-bottom: 35px;
+            margin-bottom: 30px;
         }
 
         .outcome-text {
@@ -567,11 +586,11 @@
         }
 
         .outcome-text p {
-            margin-bottom: 23px;
+            margin-bottom: 20px;
         }
 
         .outcome-quote {
-            margin-top: 40px;
+            margin-top: 35px;
             padding: 28px 32px;
             border-left: 5px solid var(--purple);
             background: #262329;
@@ -589,8 +608,8 @@
         ========================= */
 
         .corporate-section {
-            margin-top: 65px;
-            padding-top: 60px;
+            margin-top: 60px;
+            padding-top: 55px;
             border-top: 1px solid #3C3840;
             max-width: 950px;
         }
@@ -600,7 +619,7 @@
             line-height: 1.05;
             letter-spacing: -1.5px;
             color: var(--white);
-            margin-bottom: 28px;
+            margin-bottom: 25px;
         }
 
         .corporate-text {
@@ -610,7 +629,7 @@
         }
 
         .corporate-text p {
-            margin-bottom: 23px;
+            margin-bottom: 20px;
         }
 
         .corporate-text strong {
@@ -622,7 +641,7 @@
         ========================= */
 
         .purpose-quote {
-            margin-top: 75px;
+            margin-top: 70px;
             max-width: 900px;
             font-size: clamp(32px, 5vw, 62px);
             line-height: 1.02;
@@ -639,14 +658,14 @@
 
         .work-options {
             max-width: 950px;
-            margin-top: 85px;
-            padding-top: 65px;
+            margin-top: 70px;
+            padding-top: 60px;
             border-top: 1px solid #3C3840;
         }
 
         .work-options .purpose-intro {
             margin-top: 18px;
-            margin-bottom: 35px;
+            margin-bottom: 30px;
         }
 
         /* =========================
@@ -735,6 +754,10 @@
                 top: 15%;
             }
 
+            .role-anchor {
+                line-height: 1.4;
+            }
+
             .stats {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -754,7 +777,7 @@
             }
 
             .case-body {
-                padding: 28px 30px 35px;
+                padding: 25px 30px 35px;
             }
 
             .career-progression {
@@ -800,13 +823,15 @@
             .case-title {
                 font-size: 27px;
             }
+
+            .role-anchor {
+                font-size: 13px;
+            }
         }
     </style>
 </head>
 
-
 <body>
-
 
 <!-- =========================
      NAVIGATION
@@ -848,6 +873,13 @@
 
         <div class="tagline">
             I solve problems that don't have obvious solutions.
+        </div>
+
+        <!-- NEW ROLE POSITIONING -->
+
+        <div class="role-anchor">
+            Roles I'd fit:
+            <span>Head of Operations • General Manager • Chief of Staff</span>
         </div>
 
         <p class="intro">
@@ -959,7 +991,6 @@
 
     <div class="experience">
 
-
         <!-- KAT METAL -->
 
         <div class="experience-item">
@@ -968,8 +999,10 @@
                 KatMetal Estonia • 2017 — 2025
             </div>
 
+            <!-- CHANGED -->
+
             <h3>
-                From Assistant to Business Development Manager
+                Increasing responsibility, broader ownership
             </h3>
 
             <div class="career-progression">
@@ -1222,77 +1255,52 @@
             <div class="case-grid">
 
                 <div class="case-block">
-
-                    <h4>
-                        The situation
-                    </h4>
-
+                    <h4>The situation</h4>
                     <p>
                         A band from Estonia had a concert in Israel when
                         the security situation suddenly changed and
                         flights from Europe to Israel were being cancelled.
                         Their original travel plans were effectively gone.
                     </p>
-
                 </div>
 
                 <div class="case-block">
-
-                    <h4>
-                        The challenge
-                    </h4>
-
+                    <h4>The challenge</h4>
                     <p>
                         The band needed to get to Israel, but there was no
                         single route or simple solution. Flights were
                         disappearing, plans were changing and people were
                         being affected differently.
                     </p>
-
                 </div>
 
                 <div class="case-block">
-
-                    <h4>
-                        My response
-                    </h4>
-
+                    <h4>My response</h4>
                     <p>
                         I started solving it person by person. I found
                         alternative flights, rebuilt routes as availability
                         changed and kept coordinating the group throughout
                         the process.
                     </p>
-
                 </div>
 
                 <div class="case-block">
-
-                    <h4>
-                        When things changed again
-                    </h4>
-
+                    <h4>When things changed again</h4>
                     <p>
                         Someone became stranded in Warsaw. Another route
                         had to go through Greece instead. Each new problem
                         meant finding a new solution rather than giving up
                         on the original goal.
                     </p>
-
                 </div>
 
             </div>
 
             <div class="case-result">
-
-                <strong>
-                    The result
-                </strong>
-
+                <strong>The result</strong>
                 Within roughly 24 hours, I had rebuilt the travel plan
                 and got almost the entire band to Israel. The concert
                 happened.
-
             </div>
 
         </div>
@@ -1329,26 +1337,17 @@
             <div class="case-grid">
 
                 <div class="case-block">
-
-                    <h4>
-                        The situation
-                    </h4>
-
+                    <h4>The situation</h4>
                     <p>
                         An unexpected leadership crisis put the organisation
                         under significant pressure. I was away on my days
                         off when the situation emerged and returned
                         immediately.
                     </p>
-
                 </div>
 
                 <div class="case-block">
-
-                    <h4>
-                        The challenge
-                    </h4>
-
+                    <h4>The challenge</h4>
                     <p>
                         There was no established playbook. Senior
                         stakeholders from different countries needed to be
@@ -1356,50 +1355,34 @@
                         owners and CEOs, alongside banking, legal and
                         finance teams.
                     </p>
-
                 </div>
 
                 <div class="case-block">
-
-                    <h4>
-                        My response
-                    </h4>
-
+                    <h4>My response</h4>
                     <p>
                         I stepped into the coordination role, identifying
                         who needed to be involved and bringing international
                         stakeholders together to establish what needed to
                         happen, when and by whom.
                     </p>
-
                 </div>
 
                 <div class="case-block">
-
-                    <h4>
-                        The human side
-                    </h4>
-
+                    <h4>The human side</h4>
                     <p>
                         Alongside the business response, I worked toward
                         a constructive transition and tried to handle the
                         situation as humanely as possible for the people
                         involved.
                     </p>
-
                 </div>
 
             </div>
 
             <div class="case-result">
-
-                <strong>
-                    What it taught me
-                </strong>
-
+                <strong>What it taught me</strong>
                 When there is no clear plan, I don't wait for one to
                 appear. I start building one.
-
             </div>
 
         </div>
@@ -1436,11 +1419,7 @@
             <div class="case-grid">
 
                 <div class="case-block">
-
-                    <h4>
-                        The situation
-                    </h4>
-
+                    <h4>The situation</h4>
                     <p>
                         Through LeMonID, I provided project and
                         organisational services connected to Wise.
@@ -1453,15 +1432,10 @@
                         people, with hundreds choosing to spend their day
                         contributing to different social-impact projects.
                     </p>
-
                 </div>
 
                 <div class="case-block">
-
-                    <h4>
-                        The challenge
-                    </h4>
-
+                    <h4>The challenge</h4>
                     <p>
                         Participants were distributed across multiple
                         organisations and projects, ranging from community
@@ -1476,15 +1450,10 @@
                         Singapore. Tallinn alone was expected to have
                         500–600 people.
                     </p>
-
                 </div>
 
                 <div class="case-block">
-
-                    <h4>
-                        My responsibility
-                    </h4>
-
+                    <h4>My responsibility</h4>
                     <p>
                         For Summer Days, I coordinated organisations,
                         team leads, participants, transportation, schedules,
@@ -1496,15 +1465,10 @@
                         For Mission Days, I helped develop and coordinate
                         the social-impact element of the conference.
                     </p>
-
                 </div>
 
                 <div class="case-block">
-
-                    <h4>
-                        Beyond the social track
-                    </h4>
-
+                    <h4>Beyond the social track</h4>
                     <p>
                         During Summer Days, I also managed the Co-Team,
                         coordinating operational infrastructure that kept
@@ -1517,23 +1481,17 @@
                         practical details and turn them into something that
                         actually works.
                     </p>
-
                 </div>
 
             </div>
 
             <div class="case-result">
-
-                <strong>
-                    The bigger picture
-                </strong>
-
+                <strong>The bigger picture</strong>
                 What made these projects meaningful was that the
                 coordination had a purpose. I wasn't just organising
                 people and logistics — I was helping create a situation
                 where hundreds of people could contribute to something
                 bigger than themselves.
-
             </div>
 
         </div>
@@ -1570,75 +1528,50 @@
             <div class="case-grid">
 
                 <div class="case-block">
-
-                    <h4>
-                        The situation
-                    </h4>
-
+                    <h4>The situation</h4>
                     <p>
                         A year-end shipment was at risk. The container
                         was stuck, the shipping company was experiencing
                         problems and the bill of lading was not going
                         to be ready in time.
                     </p>
-
                 </div>
 
                 <div class="case-block">
-
-                    <h4>
-                        The challenge
-                    </h4>
-
+                    <h4>The challenge</h4>
                     <p>
                         The material needed to leave within the current
                         year. Waiting until January wasn't an acceptable
                         outcome.
                     </p>
-
                 </div>
 
                 <div class="case-block">
-
-                    <h4>
-                        My response
-                    </h4>
-
+                    <h4>My response</h4>
                     <p>
                         I identified the people who could influence each
                         part of the problem, contacted the right parties
                         and coordinated the moving pieces until we found
                         a way forward.
                     </p>
-
                 </div>
 
                 <div class="case-block">
-
-                    <h4>
-                        The bigger picture
-                    </h4>
-
+                    <h4>The bigger picture</h4>
                     <p>
                         Month-end and especially year-end were recurring
                         periods of intense operational pressure, requiring
                         quick decisions and constant coordination.
                     </p>
-
                 </div>
 
             </div>
 
             <div class="case-result">
-
-                <strong>
-                    The result
-                </strong>
-
+                <strong>The result</strong>
                 I was able to resolve these kinds of issues and keep
                 shipments moving toward the required month-end or
                 year-end deadline.
-
             </div>
 
         </div>
@@ -1684,9 +1617,8 @@
 
         <p>
             What matters to me is understanding
-            <strong>why the work matters</strong>, caring about the people
-            I'm working with and having enough ownership to make a real
-            difference.
+            <strong>why the work matters</strong> and working with people
+            who genuinely care about achieving it.
         </p>
 
     </div>
@@ -1705,7 +1637,7 @@
         </h3>
 
         <div class="outcome-lead">
-            I need a meaningful outcome — and the ownership to get there.
+            I need a clearly defined outcome.
         </div>
 
         <div class="outcome-text">
@@ -1716,29 +1648,32 @@
             </p>
 
             <p>
-                Give me a difficult problem, an objective, a team that
-                needs direction or a situation that has become complicated.
+                Give me a problem, an objective, a team that needs
+                direction, or a situation that has become complicated.
                 I don't need every step mapped out before I start.
             </p>
 
             <p>
                 <strong>
-                    I need to understand what we're trying to achieve,
-                    why it matters and what I'm empowered to own.
+                    I need to understand what we're trying to achieve —
+                    then I'll figure out what needs to happen.
                 </strong>
+            </p>
+
+            <p>
+                That might mean fixing an operational problem, building a
+                team, taking ownership of a complicated project, connecting
+                departments or figuring out the next move.
             </p>
 
         </div>
 
         <div class="outcome-quote">
-
             Don't tell me exactly how to get there.<br><br>
 
             <span>
-                Tell me where we're going, why it matters and let me
-                help figure out how to get there.
+                Tell me where we're going and why it matters.
             </span>
-
         </div>
 
     </div>
@@ -1761,7 +1696,7 @@
             <p>
                 I can absolutely see myself working inside a large
                 international organisation. Large organisations can have
-                enormous complexity — and that complexity is sometimes
+                enormous complexity — and sometimes that complexity is
                 exactly where I can be useful.
             </p>
 
@@ -1781,9 +1716,8 @@
             <p>
                 The same applies to a startup or growing company.
                 <strong>
-                    The size and structure of the organisation matter less
-                    to me than having room to take ownership and make
-                    something better.
+                    The size and structure matter less to me than having
+                    room to take ownership and make something better.
                 </strong>
             </p>
 
@@ -1829,10 +1763,10 @@
             </p>
 
             <p>
-                I like being close to the action: figuring out what needs
-                to happen, bringing the right people together, building
-                structure where there isn't enough of it yet, and turning
-                <strong>“we should”</strong> into
+                I like being close to the action. I like figuring out what
+                needs to happen, bringing the right people together,
+                building structure where there isn't enough of it yet,
+                and turning <strong>“we should”</strong> into
                 <strong>“it's done.”</strong>
             </p>
 
@@ -1883,16 +1817,17 @@
             <p>
                 I have my own companies through which I can provide
                 services and invoice clients. If you have a difficult
-                project, an operational problem or a transition that needs
-                someone to take ownership of, I can step in and help make
-                it work.
+                project, an operational problem, a transition that needs
+                someone to take ownership of, or simply a situation where
+                you need someone to come in and figure things out — I can
+                step in and help make it work.
             </p>
 
             <p>
-                Sometimes you need another permanent person.
-                Sometimes you need someone who can walk into the mess,
-                understand the outcome that matters and take ownership
-                of getting there.
+                Sometimes you need another permanent person. Sometimes
+                you need someone who can walk into the mess, understand
+                the outcome that matters and take ownership of getting
+                there.
             </p>
 
             <p>
@@ -1965,7 +1900,6 @@
     </div>
 
 </footer>
-
 
 </body>
 </html>
