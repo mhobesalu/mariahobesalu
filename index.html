@@ -671,6 +671,30 @@
             margin-bottom: 35px;
         }
 
+        /* Small, understated circular photo — sits with the signature
+           line above the buttons, not competing with the CTA copy */
+        .cta-signature {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 35px;
+        }
+
+        .cta-photo {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid rgba(28,26,31,0.15);
+            flex-shrink: 0;
+        }
+
+        .cta-signature span {
+            font-size: 14px;
+            color: var(--dark);
+            opacity: 0.75;
+        }
+
         .buttons {
             display: flex;
             flex-wrap: wrap;
@@ -1926,6 +1950,21 @@
         to step in and solve a specific problem, I'd love to hear what
         you're working on.
     </p>
+
+    <!-- Small circular photo + name, understated signature above the buttons -->
+    <div class="cta-signature">
+
+        <img
+            class="cta-photo"
+            src="maria.jpg"
+            alt="Maria Hõbesalu"
+        >
+
+        <span>
+            Maria Hõbesalu
+        </span>
+
+    </div>
 
     <div class="buttons">
 
