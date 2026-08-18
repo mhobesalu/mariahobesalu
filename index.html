@@ -202,7 +202,7 @@
         ========================= */
 
         .experience {
-            max-width: 950px;
+            max-width: 1000px;
         }
 
         .experience-item {
@@ -224,7 +224,7 @@
         }
 
         .experience h3 {
-            font-size: clamp(28px, 4vw, 38px);
+            font-size: clamp(28px, 4vw, 42px);
             margin-bottom: 20px;
             letter-spacing: -1px;
         }
@@ -234,6 +234,28 @@
             font-size: 18px;
             max-width: 850px;
             margin-bottom: 15px;
+        }
+
+        .career-progression {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 35px 0 40px;
+        }
+
+        .career-step {
+            background: var(--purple-light);
+            color: var(--purple-dark);
+            padding: 12px 18px;
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .career-arrow {
+            color: var(--purple-dark);
+            font-size: 18px;
         }
 
         .experience-highlight {
@@ -548,6 +570,16 @@
                 padding: 30px;
             }
 
+            .career-progression {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .career-arrow {
+                transform: rotate(90deg);
+                margin-left: 18px;
+            }
+
             .story-card {
                 padding: 35px;
             }
@@ -680,7 +712,7 @@
 
     <h2>
         Where I've<br>
-        done it.
+        grown into it.
     </h2>
 
     <div class="experience">
@@ -688,25 +720,64 @@
         <div class="experience-item">
 
             <div class="experience-meta">
-                2017 — 2025
+                KatMetal • 2017 — 2025
             </div>
 
             <h3>
-                Business Development Manager — KatMetal
+                From Assistant to Business Development Manager
             </h3>
 
+            <div class="career-progression">
+
+                <div class="career-step">
+                    Assistant
+                </div>
+
+                <div class="career-arrow">
+                    →
+                </div>
+
+                <div class="career-step">
+                    Key Account Manager
+                </div>
+
+                <div class="career-arrow">
+                    →
+                </div>
+
+                <div class="career-step">
+                    Business Manager
+                </div>
+
+                <div class="career-arrow">
+                    →
+                </div>
+
+                <div class="career-step">
+                    Business Development Manager
+                </div>
+
+            </div>
+
             <p>
-                Led international business development and commercial
-                operations in the e-waste sector, while overseeing a
-                20+ person operational environment spanning office,
-                logistics and warehouse functions.
+                I joined KatMetal as an Assistant and progressed through
+                four roles over eight years, taking on increasingly broad
+                responsibility across international clients, commercial
+                operations, logistics and people leadership.
             </p>
 
             <p>
-                Managed international client relationships, market
-                expansion, logistics and cross-border operations, while
-                taking responsibility for keeping the wider operation
-                moving.
+                In my final role, I was responsible for international
+                business development and commercial operations, while
+                overseeing a 20+ person operational environment spanning
+                office, logistics and warehouse functions.
+            </p>
+
+            <p>
+                The role meant working across international markets,
+                developing client relationships, coordinating logistics
+                and keeping the wider operation moving when things became
+                complicated.
             </p>
 
             <div class="experience-highlight">
