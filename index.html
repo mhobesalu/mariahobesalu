@@ -198,42 +198,56 @@
         }
 
         /* =========================
-           STRENGTHS
+           EXPERIENCE
         ========================= */
 
-        .skills {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 18px;
+        .experience {
+            max-width: 950px;
         }
 
-        .skill {
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: 18px;
-            padding: 38px;
-            transition: .25s;
+        .experience-item {
+            padding: 45px 0;
+            border-top: 1px solid var(--border);
         }
 
-        .skill:hover {
-            transform: translateY(-5px);
-            border-color: var(--purple);
-            box-shadow: 0 15px 40px rgba(128,100,162,.12);
+        .experience-item:last-child {
+            border-bottom: 1px solid var(--border);
         }
 
-        .skill-number {
+        .experience-meta {
             color: var(--purple-dark);
-            font-size: 13px;
-            margin-bottom: 22px;
-        }
-
-        .skill h3 {
-            font-size: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 12px;
+            font-weight: 700;
             margin-bottom: 12px;
         }
 
-        .skill p {
+        .experience h3 {
+            font-size: clamp(28px, 4vw, 38px);
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .experience p {
             color: var(--grey);
+            font-size: 18px;
+            max-width: 850px;
+            margin-bottom: 15px;
+        }
+
+        .experience-highlight {
+            margin-top: 30px;
+            display: inline-block;
+            background: var(--purple-light);
+            padding: 18px 25px;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+
+        .experience-highlight strong {
+            color: var(--purple-dark);
+            font-size: 24px;
         }
 
         /* =========================
@@ -423,51 +437,6 @@
         }
 
         /* =========================
-           EXPERIENCE
-        ========================= */
-
-        .experience {
-            max-width: 900px;
-        }
-
-        .experience-item {
-            padding: 35px 0;
-            border-top: 1px solid var(--border);
-        }
-
-        .experience-item:last-child {
-            border-bottom: 1px solid var(--border);
-        }
-
-        .experience-meta {
-            color: var(--purple-dark);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 12px;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .experience h3 {
-            font-size: 30px;
-            margin-bottom: 10px;
-        }
-
-        .experience p {
-            color: var(--grey);
-            font-size: 17px;
-        }
-
-        .experience-highlight {
-            margin-top: 25px;
-            display: inline-block;
-            background: var(--purple-light);
-            padding: 14px 20px;
-            border-radius: 12px;
-            font-size: 17px;
-        }
-
-        /* =========================
            CONTACT
         ========================= */
 
@@ -549,7 +518,6 @@
                 padding: 85px 6%;
             }
 
-            .skills,
             .case-grid,
             .purpose-grid {
                 grid-template-columns: 1fr;
@@ -603,10 +571,9 @@
 
     <ul>
         <li><a href="#about">About</a></li>
-        <li><a href="#strengths">Strengths</a></li>
-        <li><a href="#cases">Case Studies</a></li>
-        <li><a href="#purpose">What I Want</a></li>
         <li><a href="#experience">Experience</a></li>
+        <li><a href="#cases">Problem Solving</a></li>
+        <li><a href="#purpose">What I Want</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
 
@@ -686,89 +653,50 @@
 
 
 <!-- =========================
-     STRENGTHS
+     EXPERIENCE
 ========================= -->
 
-<section id="strengths">
+<section id="experience">
 
     <div class="section-label">
-        02 — Strengths
+        02 — Experience
     </div>
 
     <h2>
-        What I do best.
+        Where I've<br>
+        done it.
     </h2>
 
-    <div class="skills">
+    <div class="experience">
 
-        <div class="skill">
+        <div class="experience-item">
 
-            <div class="skill-number">
-                01
+            <div class="experience-meta">
+                2017 — 2025
             </div>
 
             <h3>
-                Problem Solving
+                Business Development Manager — KatMetal
             </h3>
 
             <p>
-                Finding practical solutions when the obvious solution
-                doesn't exist.
+                Led international business development and commercial
+                operations in the e-waste sector, while overseeing a
+                20+ person operational environment spanning office,
+                logistics and warehouse functions.
             </p>
 
-        </div>
+            <p>
+                Managed international client relationships, market
+                expansion, logistics and cross-border operations, while
+                taking responsibility for keeping the wider operation
+                moving.
+            </p>
 
-
-        <div class="skill">
-
-            <div class="skill-number">
-                02
+            <div class="experience-highlight">
+                Annual revenue grew from approximately
+                <strong>$1M → $20M</strong> over seven years.
             </div>
-
-            <h3>
-                People Leadership
-            </h3>
-
-            <p>
-                Keeping teams focused, calm and moving forward when
-                situations become difficult.
-            </p>
-
-        </div>
-
-
-        <div class="skill">
-
-            <div class="skill-number">
-                03
-            </div>
-
-            <h3>
-                Operations
-            </h3>
-
-            <p>
-                Coordinating people, processes, logistics and resources
-                across complex environments.
-            </p>
-
-        </div>
-
-
-        <div class="skill">
-
-            <div class="skill-number">
-                04
-            </div>
-
-            <h3>
-                Project Leadership
-            </h3>
-
-            <p>
-                Bringing different people and priorities together and
-                making sure things actually happen.
-            </p>
 
         </div>
 
@@ -1614,67 +1542,13 @@
 
 
 <!-- =========================
-     EXPERIENCE
-========================= -->
-
-<section id="experience">
-
-    <div class="section-label">
-        06 — Experience
-    </div>
-
-    <h2>
-        Where I've<br>
-        done it.
-    </h2>
-
-
-    <div class="experience">
-
-        <div class="experience-item">
-
-            <div class="experience-meta">
-                2017 — 2025
-            </div>
-
-            <h3>
-                Business Development Manager — KatMetal
-            </h3>
-
-            <p>
-                Led international business development and commercial
-                operations in the e-waste sector, while overseeing a
-                20+ person operational environment spanning office,
-                logistics and warehouse functions.
-            </p>
-
-            <p style="margin-top: 15px;">
-                Managed international client relationships, market
-                expansion, logistics and cross-border operations, while
-                taking responsibility for keeping the wider operation
-                moving.
-            </p>
-
-            <div class="experience-highlight">
-                Annual revenue grew from approximately
-                <strong>$1M → $20M</strong> over seven years.
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
      CONTACT
 ========================= -->
 
 <section id="contact" class="cta">
 
     <div class="section-label">
-        07 — Let's talk
+        06 — Let's talk
     </div>
 
     <h2>
