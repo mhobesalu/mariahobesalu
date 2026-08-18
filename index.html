@@ -312,6 +312,72 @@
             margin-bottom: 6px;
         }
 
+        /* PURPOSE */
+
+        .purpose {
+            background: var(--dark);
+            color: var(--white);
+            border-top: none;
+        }
+
+        .purpose .section-label {
+            color: var(--purple);
+        }
+
+        .purpose-intro {
+            max-width: 900px;
+            font-size: clamp(30px, 4vw, 50px);
+            line-height: 1.12;
+            letter-spacing: -1.5px;
+            margin-bottom: 55px;
+        }
+
+        .purpose-text {
+            max-width: 850px;
+            font-size: 19px;
+            color: #D8D3DB;
+        }
+
+        .purpose-text p {
+            margin-bottom: 25px;
+        }
+
+        .purpose-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+            margin-top: 55px;
+            max-width: 950px;
+        }
+
+        .purpose-card {
+            border: 1px solid #3C3840;
+            border-radius: 18px;
+            padding: 32px;
+        }
+
+        .purpose-card h3 {
+            color: var(--white);
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .purpose-card p {
+            color: #BDB8C1;
+        }
+
+        .purpose-quote {
+            margin-top: 75px;
+            max-width: 900px;
+            font-size: clamp(32px, 5vw, 62px);
+            line-height: 1.02;
+            letter-spacing: -2px;
+        }
+
+        .purpose-quote span {
+            color: var(--purple);
+        }
+
         /* PERSONAL STORY */
 
         .story-card {
@@ -443,7 +509,8 @@
             }
 
             .skills,
-            .case-grid {
+            .case-grid,
+            .purpose-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -491,6 +558,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#strengths">Strengths</a></li>
         <li><a href="#cases">Case Studies</a></li>
+        <li><a href="#purpose">What I Want</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
@@ -818,7 +886,7 @@
             </div>
 
             <div class="case-tag">
-                Large-Scale Coordination
+                Purpose & Coordination
             </div>
 
         </div>
@@ -1046,12 +1114,129 @@
 </section>
 
 
+<!-- PURPOSE / WHAT I WANT -->
+
+<section id="purpose" class="purpose">
+
+    <div class="section-label">
+        04 — What I'm looking for
+    </div>
+
+    <h2>
+        I don't just want<br>
+        a job.
+    </h2>
+
+    <div class="purpose-intro">
+        I need a reason to care about what I do.
+    </div>
+
+    <div class="purpose-text">
+
+        <p>
+            I've spent much of my career solving problems, coordinating
+            people and making complicated things work.
+        </p>
+
+        <p>
+            But the work that has meant the most to me has always had
+            something more behind it.
+        </p>
+
+        <p>
+            <strong>A cause. A purpose. A reason why the people involved
+            should care.</strong>
+        </p>
+
+        <p>
+            Wise Summer Days was a perfect example. I got to do what I
+            naturally love — organise, coordinate, solve problems and
+            handle whatever went wrong — but the outcome wasn't simply
+            that an event ran successfully.
+        </p>
+
+        <p>
+            People benefited. Organisations received help. Participants
+            got to experience what it feels like to contribute to
+            something bigger than themselves.
+        </p>
+
+        <p>
+            That's the kind of work I want more of.
+        </p>
+
+    </div>
+
+
+    <div class="purpose-grid">
+
+        <div class="purpose-card">
+
+            <h3>Solve difficult problems.</h3>
+
+            <p>
+                Give me projects where there isn't an obvious playbook
+                and let me figure out how to make them work.
+            </p>
+
+        </div>
+
+
+        <div class="purpose-card">
+
+            <h3>Bring people together.</h3>
+
+            <p>
+                Build teams, create trust and get people moving toward
+                a common goal.
+            </p>
+
+        </div>
+
+
+        <div class="purpose-card">
+
+            <h3>Create meaningful impact.</h3>
+
+            <p>
+                Work for something that benefits people, a community,
+                a mission or a bigger purpose.
+            </p>
+
+        </div>
+
+
+        <div class="purpose-card">
+
+            <h3>Build something people care about.</h3>
+
+            <p>
+                Create teams where people don't just work together —
+                they genuinely want to give their best for something
+                they believe in.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="purpose-quote">
+
+        I want to bring people together around something
+        <span>worth doing.</span>
+
+    </div>
+
+</section>
+
+
 <!-- PERSONAL STORY -->
 
 <section>
 
     <div class="section-label">
-        04 — The pattern started early
+        05 — The pattern started early
     </div>
 
     <h2>
@@ -1097,7 +1282,7 @@
 <section id="experience">
 
     <div class="section-label">
-        05 — Experience
+        06 — Experience
     </div>
 
     <h2>
@@ -1154,7 +1339,7 @@
 <section id="contact" class="cta">
 
     <div class="section-label">
-        06 — Let's talk
+        07 — Let's talk
     </div>
 
     <h2>
@@ -1163,7 +1348,8 @@
     </h2>
 
     <p>
-        I'm currently open to new opportunities and conversations.
+        I'm looking for a role where I can solve difficult problems,
+        bring people together and work toward something that matters.
     </p>
 
     <div class="buttons">
