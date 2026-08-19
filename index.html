@@ -87,7 +87,7 @@
         }
 
         .hero-content {
-            max-width: 1050px;
+            max-width: 950px;
             position: relative;
             z-index: 2;
         }
@@ -205,7 +205,7 @@
         }
 
         .stat-number {
-            font-size: clamp(25px, 2.5vw, 37px);
+            font-size: clamp(24px, 2.5vw, 36px);
             font-weight: 700;
             line-height: 1;
             letter-spacing: -1.5px;
@@ -292,12 +292,24 @@
             margin-bottom: 15px;
         }
 
+        /* CAREER PROGRESSION */
+
+        .career-label {
+            color: var(--grey);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 10px;
+            font-weight: 700;
+            margin-top: 30px;
+            margin-bottom: 12px;
+        }
+
         .career-progression {
             display: flex;
             align-items: center;
             flex-wrap: wrap;
             gap: 10px;
-            margin: 35px 0 40px;
+            margin: 0 0 40px;
         }
 
         .career-step {
@@ -307,6 +319,22 @@
             border-radius: 100px;
             font-size: 14px;
             font-weight: 700;
+        }
+
+        /* Assistant is deliberately visually subordinate */
+        .career-step.initial {
+            background: transparent;
+            color: #99939F;
+            border: 1px solid #D8D2DD;
+            font-weight: 500;
+            padding: 10px 16px;
+        }
+
+        /* Final role gets the strongest emphasis */
+        .career-step.final {
+            background: var(--purple);
+            color: var(--dark);
+            padding: 13px 20px;
         }
 
         .career-arrow {
@@ -417,46 +445,105 @@
             border: 1px solid var(--border);
             border-radius: 24px;
             margin-bottom: 25px;
-            padding: 45px;
-            max-width: 1050px;
+            padding: 42px;
         }
 
         .testimonial-label {
             color: var(--purple-dark);
             font-size: 11px;
             font-weight: 700;
-            text-transform: uppercase;
             letter-spacing: 2px;
-            margin-bottom: 20px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
         }
 
         .testimonial-quote {
-            font-size: clamp(25px, 3vw, 37px);
+            font-size: clamp(25px, 3vw, 38px);
             line-height: 1.2;
             letter-spacing: -1px;
             margin-bottom: 30px;
         }
 
-        .testimonial-attribution {
-            padding-top: 22px;
+        .testimonial-quote::before {
+            content: "“";
+            color: var(--purple);
+            font-size: 1.5em;
+            line-height: 0;
+            vertical-align: -0.15em;
+            margin-right: 5px;
+        }
+
+        .testimonial-author {
             border-top: 1px solid var(--border);
+            padding-top: 20px;
             color: var(--grey);
             font-size: 15px;
         }
 
-        .testimonial-attribution strong {
+        .testimonial-author strong {
             display: block;
             color: var(--dark);
             font-size: 17px;
             margin-bottom: 3px;
         }
 
-        .israel-story {
-            background: var(--purple-light);
+        /* ISRAEL STORY */
+
+        .story-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            margin-bottom: 25px;
+            overflow: hidden;
         }
 
-        .israel-story .testimonial-quote {
-            font-size: clamp(24px, 3vw, 34px);
+        .story-header {
+            padding: 32px 42px 24px;
+        }
+
+        .story-number {
+            color: var(--purple-dark);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .story-title {
+            font-size: clamp(30px, 4vw, 44px);
+            line-height: 1.1;
+            letter-spacing: -1.5px;
+            max-width: 800px;
+        }
+
+        .story-body {
+            border-top: 1px solid var(--border);
+            padding: 32px 42px 40px;
+        }
+
+        .story-body p {
+            color: var(--grey);
+            font-size: 18px;
+            max-width: 850px;
+            margin-bottom: 20px;
+        }
+
+        .story-body p:last-child {
+            margin-bottom: 0;
+        }
+
+        .story-result {
+            margin-top: 30px;
+            padding: 23px;
+            background: var(--purple-light);
+            border-radius: 15px;
+            font-size: 17px;
+            color: var(--dark);
+        }
+
+        .story-result strong {
+            display: block;
+            margin-bottom: 5px;
         }
 
         /* PURPOSE */
@@ -647,7 +734,9 @@
             font-size: 14px;
         }
 
-        @media(max-width:1100px) {
+        /* MOBILE */
+
+        @media(max-width:1000px) {
 
             .stats {
                 grid-template-columns: repeat(3, 1fr);
@@ -696,10 +785,6 @@
                 grid-template-columns: 1fr;
             }
 
-            .testimonial {
-                padding: 35px 28px;
-            }
-
             .career-progression {
                 align-items: flex-start;
                 flex-direction: column;
@@ -712,6 +797,18 @@
 
             .lemonid {
                 padding: 35px 28px;
+            }
+
+            .testimonial {
+                padding: 32px 28px;
+            }
+
+            .story-header {
+                padding: 28px 30px 24px;
+            }
+
+            .story-body {
+                padding: 25px 30px 35px;
             }
 
             .cta {
@@ -744,8 +841,8 @@
                 font-size: 13px;
             }
 
-            .testimonial {
-                padding: 30px 22px;
+            .testimonial-quote {
+                font-size: 26px;
             }
         }
     </style>
@@ -759,7 +856,7 @@
     <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
-        <li><a href="#testimonials">What People Say</a></li>
+        <li><a href="#people-say">What People Say</a></li>
         <li><a href="#purpose">What I Want</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
@@ -826,9 +923,8 @@
             </div>
 
             <div class="stat">
-                <div class="stat-number">5</div>
+                <div class="stat-number">5 markets</div>
                 <div class="stat-label">
-                    Markets I've worked in:
                     Brazil • Israel • Japan • Egypt • Turkey
                 </div>
             </div>
@@ -912,21 +1008,33 @@
                 Increasing responsibility, broader ownership
             </h3>
 
+            <div class="career-label">
+                Career progression
+            </div>
+
             <div class="career-progression">
 
-                <div class="career-step">Assistant</div>
+                <div class="career-step initial">
+                    Assistant
+                </div>
 
                 <div class="career-arrow">→</div>
 
-                <div class="career-step">Key Account Manager</div>
+                <div class="career-step">
+                    Key Account Manager
+                </div>
 
                 <div class="career-arrow">→</div>
 
-                <div class="career-step">Business Manager</div>
+                <div class="career-step">
+                    Business Manager
+                </div>
 
                 <div class="career-arrow">→</div>
 
-                <div class="career-step">Business Development Manager</div>
+                <div class="career-step final">
+                    Business Development Manager
+                </div>
 
             </div>
 
@@ -974,6 +1082,12 @@
                 events, organisations and business projects.
             </div>
 
+            <p>
+                Through LeMonID, I was brought into situations where something
+                needed to be organised, produced, coordinated or solved —
+                and trusted to make it happen.
+            </p>
+
             <div class="project-heading">
                 Selected projects & clients
             </div>
@@ -996,11 +1110,6 @@
                 </div>
 
                 <div>
-                    <strong>COP23</strong><br>
-                    <span>Jolos • Bonn • Project / event coordination</span>
-                </div>
-
-                <div>
                     <strong>Nortal Party Night</strong><br>
                     <span>LeMonID / event production • 2018</span>
                 </div>
@@ -1013,6 +1122,16 @@
                 <div>
                     <strong>Estonian Cultural Days in New York</strong><br>
                     <span>LeMonID • April 2017</span>
+                </div>
+
+                <div>
+                    <strong>COP23, Bonn</strong><br>
+                    <span>Jolos / LeMonID • International event project</span>
+                </div>
+
+                <div>
+                    <strong>George Michael Tribute Concert</strong><br>
+                    <span>LeMonID • June 2017</span>
                 </div>
 
                 <div>
@@ -1069,7 +1188,7 @@
 
 <!-- WHAT PEOPLE SAY -->
 
-<section id="testimonials">
+<section id="people-say">
 
     <div class="section-label">
         03 — What People Say
@@ -1081,36 +1200,34 @@
     </h2>
 
     <p class="testimonials-intro">
-        The best way to understand how I work is to hear from people
-        who have worked alongside me when things needed to get done.
+        The best way to understand how I work is to hear from people who
+        have worked alongside me.
     </p>
 
 
-    <!-- JACQUELINE BAUMERS -->
+    <!-- JACQUELINE BAUMER TESTIMONIAL -->
 
     <article class="testimonial">
 
         <div class="testimonial-label">
-            Leadership • Organisation • Execution
+            Leadership • People Management • Execution
         </div>
 
         <div class="testimonial-quote">
-            “Maria is fantastic to work with. She is a strong leader who knows
-            how to engage, motivate, and bring out the best in everyone on her
-            team. She is exceptionally organized and detail-oriented, with the
-            rare ability to see the big picture while also being willing to dive
-            into the weeds and make things happen.
-
-            <br><br>
-
-            Maria has tremendous integrity, an incredible work ethic, and always
-            follows through on her commitments. I would highly recommend her to
-            anyone fortunate enough to have the opportunity to work with her.”
+            Maria is fantastic to work with. She is a strong leader who knows
+            how to engage, motivate, and bring out the best in everyone on
+            her team. She is exceptionally organized and detail-oriented,
+            with the rare ability to see the big picture while also being
+            willing to dive into the weeds and make things happen.
+            Maria has tremendous integrity, an incredible work ethic, and
+            always follows through on her commitments. I would highly
+            recommend her to anyone fortunate enough to have the opportunity
+            to work with her.
         </div>
 
-        <div class="testimonial-attribution">
-            <strong>Jacqueline Baumers</strong>
-            CEO & Founder, Baumer Impact
+        <div class="testimonial-author">
+            <strong>Jacqueline Baumer</strong>
+            CEO & Founder, Baumer Impact Consulting
         </div>
 
     </article>
@@ -1118,43 +1235,58 @@
 
     <!-- ISRAEL STORY -->
 
-    <article class="testimonial israel-story">
+    <article class="story-card">
 
-        <div class="testimonial-label">
-            Crisis Problem Solving
+        <div class="story-header">
+
+            <div class="story-number">
+                02 — A STORY ABOUT MARIA
+            </div>
+
+            <div class="story-title">
+                “The concert was still supposed to happen.”
+            </div>
+
         </div>
 
-        <div class="testimonial-quote">
-            “We had a concert in Israel, but the security situation changed
-            and flights from Europe were being cancelled.
+        <div class="story-body">
 
-            <br><br>
+            <p>
+                We had a band from Estonia scheduled to perform in Israel
+                when the security situation changed and flights from Europe
+                started getting cancelled.
+            </p>
 
-            What looked like a situation where the concert might simply have
-            to be cancelled turned into a completely different problem:
-            how do we actually get everyone there?
+            <p>
+                The band still needed to get there, but the original travel
+                plan was falling apart. Routes disappeared, people were
+                stranded in different cities and every solution created
+                another problem.
+            </p>
 
-            <br><br>
+            <p>
+                Maria took over the situation and worked through it person
+                by person. She found alternative flights, rebuilt routes and
+                coordinated everyone as circumstances changed.
+            </p>
 
-            Maria took it on. She worked through the situation person by
-            person, finding alternative flights, rebuilding routes and
-            coordinating the group as plans kept changing.
+            <p>
+                At one point, one person was stranded in Warsaw and another
+                route had to be rebuilt through Greece. Maria kept solving
+                each problem as it appeared instead of getting stuck trying
+                to preserve the original plan.
+            </p>
 
-            <br><br>
+            <div class="story-result">
+                <strong>The outcome</strong>
+                Within roughly 24 hours, almost the entire band had made it
+                to Israel and the concert happened.
+            </div>
 
-            When one person became stranded in Warsaw and another route had
-            to go through Greece, she kept solving the next problem instead
-            of getting stuck on the previous one.
+            <p style="margin-top:30px; font-style:italic; color:#8064A2;">
+                — Name to be added
+            </p>
 
-            <br><br>
-
-            Within roughly 24 hours, almost the entire band was in Israel.
-            The concert happened.”
-        </div>
-
-        <div class="testimonial-attribution">
-            <strong>Testimonial attribution to be added</strong>
-            Band / project collaborator
         </div>
 
     </article>
