@@ -87,7 +87,7 @@
         }
 
         .hero-content {
-            max-width: 950px;
+            max-width: 1050px;
             position: relative;
             z-index: 2;
         }
@@ -188,10 +188,10 @@
 
         .stats {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(5, 1fr);
             gap: 15px;
             margin-top: 55px;
-            max-width: 950px;
+            max-width: 1200px;
             position: relative;
             z-index: 2;
         }
@@ -205,7 +205,7 @@
         }
 
         .stat-number {
-            font-size: clamp(27px, 3vw, 40px);
+            font-size: clamp(25px, 2.5vw, 37px);
             font-weight: 700;
             line-height: 1;
             letter-spacing: -1.5px;
@@ -403,93 +403,60 @@
             color: var(--grey);
         }
 
-        /* CASE STUDIES */
+        /* WHAT PEOPLE SAY */
 
-        .case-intro {
+        .testimonials-intro {
             max-width: 750px;
             font-size: 20px;
             color: var(--grey);
             margin-bottom: 60px;
         }
 
-        .case-study {
+        .testimonial {
             background: var(--white);
             border: 1px solid var(--border);
             border-radius: 24px;
             margin-bottom: 25px;
-            overflow: hidden;
+            padding: 45px;
+            max-width: 1050px;
         }
 
-        .case-header {
-            padding: 32px 42px 24px;
-            display: flex;
-            justify-content: space-between;
-            gap: 30px;
-            align-items: flex-start;
-        }
-
-        .case-number {
+        .testimonial-label {
             color: var(--purple-dark);
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            margin-bottom: 9px;
-        }
-
-        .case-title {
-            font-size: 32px;
-            line-height: 1.12;
-            max-width: 720px;
-            letter-spacing: -1px;
-        }
-
-        .case-tag {
-            background: transparent;
-            border: 1px solid var(--border);
-            color: var(--purple-dark);
-            border-radius: 100px;
-            padding: 8px 13px;
             font-size: 11px;
-            white-space: nowrap;
             font-weight: 700;
-        }
-
-        .case-body {
-            border-top: 1px solid var(--border);
-            padding: 28px 42px 40px;
-        }
-
-        .case-grid {
-            display: grid;
-            grid-template-columns: repeat(2,1fr);
-            gap: 30px 40px;
-        }
-
-        .case-block h4 {
             text-transform: uppercase;
             letter-spacing: 2px;
-            font-size: 11px;
-            color: var(--purple-dark);
-            margin-bottom: 8px;
+            margin-bottom: 20px;
         }
 
-        .case-block p {
+        .testimonial-quote {
+            font-size: clamp(25px, 3vw, 37px);
+            line-height: 1.2;
+            letter-spacing: -1px;
+            margin-bottom: 30px;
+        }
+
+        .testimonial-attribution {
+            padding-top: 22px;
+            border-top: 1px solid var(--border);
             color: var(--grey);
-            font-size: 16px;
-            margin-bottom: 13px;
+            font-size: 15px;
         }
 
-        .case-result {
-            margin-top: 30px;
-            padding: 23px;
-            background: var(--purple-light);
-            border-radius: 15px;
-            font-size: 17px;
-        }
-
-        .case-result strong {
+        .testimonial-attribution strong {
             display: block;
-            margin-bottom: 5px;
+            color: var(--dark);
+            font-size: 17px;
+            margin-bottom: 3px;
+        }
+
+        .israel-story {
+            background: var(--purple-light);
+        }
+
+        .israel-story .testimonial-quote {
+            font-size: clamp(24px, 3vw, 34px);
         }
 
         /* PURPOSE */
@@ -680,6 +647,13 @@
             font-size: 14px;
         }
 
+        @media(max-width:1100px) {
+
+            .stats {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
         @media(max-width:800px) {
 
             nav {
@@ -718,18 +692,12 @@
                 padding: 85px 6%;
             }
 
-            .case-grid,
             .project-list {
                 grid-template-columns: 1fr;
             }
 
-            .case-header {
-                flex-direction: column;
-                padding: 28px 30px 24px;
-            }
-
-            .case-body {
-                padding: 25px 30px 35px;
+            .testimonial {
+                padding: 35px 28px;
             }
 
             .career-progression {
@@ -772,12 +740,12 @@
                 letter-spacing: -3px;
             }
 
-            .case-title {
-                font-size: 27px;
-            }
-
             .role-anchor {
                 font-size: 13px;
+            }
+
+            .testimonial {
+                padding: 30px 22px;
             }
         }
     </style>
@@ -791,7 +759,7 @@
     <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
-        <li><a href="#cases">Problem Solving</a></li>
+        <li><a href="#testimonials">What People Say</a></li>
         <li><a href="#purpose">What I Want</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
@@ -816,8 +784,6 @@
         <div class="tagline">
             I solve problems that don't have obvious solutions.
         </div>
-
-        <!-- KEEPING ROLES EXACTLY -->
 
         <div class="role-anchor">
             Roles I'd fit:
@@ -856,6 +822,14 @@
                 <div class="stat-number">10+ yrs</div>
                 <div class="stat-label">
                     Project, service and operational work
+                </div>
+            </div>
+
+            <div class="stat">
+                <div class="stat-number">5</div>
+                <div class="stat-label">
+                    Markets I've worked in:
+                    Brazil • Israel • Japan • Egypt • Turkey
                 </div>
             </div>
 
@@ -925,6 +899,8 @@
     </h2>
 
     <div class="experience">
+
+        <!-- KATMETAL -->
 
         <div class="experience-item">
 
@@ -998,24 +974,6 @@
                 events, organisations and business projects.
             </div>
 
-            <p>
-                Through LeMonID, I was brought into situations where something
-                needed to be organised, produced, coordinated or solved —
-                and trusted to make it happen.
-            </p>
-
-            <p>
-                Some work came through <strong>Jolos</strong>, including
-                projects for clients such as Wise. Other projects came
-                directly from organisations or my own network.
-            </p>
-
-            <p>
-                This taught me to move easily between employment, project
-                work and service engagements — stepping in wherever I can
-                create the most value.
-            </p>
-
             <div class="project-heading">
                 Selected projects & clients
             </div>
@@ -1038,6 +996,11 @@
                 </div>
 
                 <div>
+                    <strong>COP23</strong><br>
+                    <span>Jolos • Bonn • Project / event coordination</span>
+                </div>
+
+                <div>
                     <strong>Nortal Party Night</strong><br>
                     <span>LeMonID / event production • 2018</span>
                 </div>
@@ -1050,16 +1013,6 @@
                 <div>
                     <strong>Estonian Cultural Days in New York</strong><br>
                     <span>LeMonID • April 2017</span>
-                </div>
-
-                <div>
-                    <strong>WAF Vocal School</strong><br>
-                    <span>LeMonID • Management, events & production</span>
-                </div>
-
-                <div>
-                    <strong>George Michael Tribute Concert</strong><br>
-                    <span>LeMonID / WAF • June 2017</span>
                 </div>
 
                 <div>
@@ -1114,323 +1067,94 @@
 </section>
 
 
-<!-- CASE STUDIES -->
+<!-- WHAT PEOPLE SAY -->
 
-<section id="cases">
+<section id="testimonials">
 
     <div class="section-label">
-        03 — Problem Solving in Action
+        03 — What People Say
     </div>
 
     <h2>
-        When there is<br>
-        no obvious answer.
+        Not just what<br>
+        I say about myself.
     </h2>
 
-    <p class="case-intro">
-        Real situations where I stepped in, took ownership and figured
-        out what needed to happen next.
+    <p class="testimonials-intro">
+        The best way to understand how I work is to hear from people
+        who have worked alongside me when things needed to get done.
     </p>
 
 
-    <!-- CASE 01 -->
+    <!-- JACQUELINE BAUMERS -->
 
-    <article class="case-study">
+    <article class="testimonial">
 
-        <div class="case-header">
-
-            <div>
-                <div class="case-number">CASE 01</div>
-
-                <div class="case-title">
-                    The concert that wasn't supposed to happen
-                </div>
-            </div>
-
-            <div class="case-tag">
-                Crisis Problem Solving
-            </div>
-
+        <div class="testimonial-label">
+            Leadership • Organisation • Execution
         </div>
 
-        <div class="case-body">
+        <div class="testimonial-quote">
+            “Maria is fantastic to work with. She is a strong leader who knows
+            how to engage, motivate, and bring out the best in everyone on her
+            team. She is exceptionally organized and detail-oriented, with the
+            rare ability to see the big picture while also being willing to dive
+            into the weeds and make things happen.
 
-            <div class="case-grid">
+            <br><br>
 
-                <div class="case-block">
-                    <h4>The situation</h4>
-                    <p>
-                        A band from Estonia had a concert in Israel when
-                        the security situation changed and flights from
-                        Europe were cancelled.
-                    </p>
-                </div>
+            Maria has tremendous integrity, an incredible work ethic, and always
+            follows through on her commitments. I would highly recommend her to
+            anyone fortunate enough to have the opportunity to work with her.”
+        </div>
 
-                <div class="case-block">
-                    <h4>The challenge</h4>
-                    <p>
-                        The band still needed to get to Israel, but routes
-                        were disappearing and plans kept changing.
-                    </p>
-                </div>
-
-                <div class="case-block">
-                    <h4>My response</h4>
-                    <p>
-                        I solved it person by person — finding alternative
-                        flights, rebuilding routes and coordinating the group.
-                    </p>
-                </div>
-
-                <div class="case-block">
-                    <h4>When things changed again</h4>
-                    <p>
-                        One person became stranded in Warsaw and another
-                        route had to go through Greece. Each problem required
-                        a new solution.
-                    </p>
-                </div>
-
-            </div>
-
-            <div class="case-result">
-                <strong>The result</strong>
-                Within roughly 24 hours, I rebuilt the travel plan and got
-                almost the entire band to Israel. The concert happened.
-            </div>
-
+        <div class="testimonial-attribution">
+            <strong>Jacqueline Baumers</strong>
+            CEO & Founder, Baumer Impact
         </div>
 
     </article>
 
 
-    <!-- CASE 02 -->
+    <!-- ISRAEL STORY -->
 
-    <article class="case-study">
+    <article class="testimonial israel-story">
 
-        <div class="case-header">
-
-            <div>
-                <div class="case-number">CASE 02</div>
-
-                <div class="case-title">
-                    Taking over when everything changed
-                </div>
-            </div>
-
-            <div class="case-tag">
-                Leadership Under Pressure
-            </div>
-
+        <div class="testimonial-label">
+            Crisis Problem Solving
         </div>
 
-        <div class="case-body">
+        <div class="testimonial-quote">
+            “We had a concert in Israel, but the security situation changed
+            and flights from Europe were being cancelled.
 
-            <div class="case-grid">
+            <br><br>
 
-                <div class="case-block">
-                    <h4>The situation</h4>
-                    <p>
-                        An unexpected leadership crisis put the organisation
-                        under pressure. I was away on my days off and returned
-                        immediately.
-                    </p>
-                </div>
+            What looked like a situation where the concert might simply have
+            to be cancelled turned into a completely different problem:
+            how do we actually get everyone there?
 
-                <div class="case-block">
-                    <h4>The challenge</h4>
-                    <p>
-                        There was no playbook. Senior stakeholders across
-                        countries needed to be brought together, including
-                        owners, CEOs, banking, legal and finance teams.
-                    </p>
-                </div>
+            <br><br>
 
-                <div class="case-block">
-                    <h4>My response</h4>
-                    <p>
-                        I took the coordination role, identified who needed
-                        to be involved and created a clear plan for what
-                        needed to happen next.
-                    </p>
-                </div>
+            Maria took it on. She worked through the situation person by
+            person, finding alternative flights, rebuilding routes and
+            coordinating the group as plans kept changing.
 
-                <div class="case-block">
-                    <h4>The human side</h4>
-                    <p>
-                        I also worked toward a constructive transition and
-                        handled the situation as humanely as possible.
-                    </p>
-                </div>
+            <br><br>
 
-            </div>
+            When one person became stranded in Warsaw and another route had
+            to go through Greece, she kept solving the next problem instead
+            of getting stuck on the previous one.
 
-            <div class="case-result">
-                <strong>What it taught me</strong>
-                When there is no clear plan, I don't wait for one. I start
-                building it.
-            </div>
+            <br><br>
 
+            Within roughly 24 hours, almost the entire band was in Israel.
+            The concert happened.”
         </div>
 
-    </article>
-
-
-    <!-- CASE 03 -->
-
-    <article class="case-study">
-
-        <div class="case-header">
-
-            <div>
-                <div class="case-number">CASE 03</div>
-
-                <div class="case-title">
-                    Turning hundreds of people into one coordinated effort
-                </div>
-            </div>
-
-            <div class="case-tag">
-                Large-Scale Coordination
-            </div>
-
-        </div>
-
-        <div class="case-body">
-
-            <div class="case-grid">
-
-                <div class="case-block">
-                    <h4>The situation</h4>
-                    <p>
-                        Through LeMonID, I organised the social-impact track
-                        of Wise Summer Days over multiple years, involving
-                        hundreds of participants.
-                    </p>
-
-                    <p>
-                        In 2020, Wise also approached me directly for Mission
-                        Days, running simultaneously in Tallinn, Budapest
-                        and Singapore.
-                    </p>
-                </div>
-
-                <div class="case-block">
-                    <h4>The challenge</h4>
-                    <p>
-                        Participants were spread across multiple organisations
-                        and projects, from community work and children to
-                        environmental initiatives.
-                    </p>
-
-                    <p>
-                        Tallinn alone was expected to have 500–600 people
-                        for Mission Days.
-                    </p>
-                </div>
-
-                <div class="case-block">
-                    <h4>My responsibility</h4>
-                    <p>
-                        I coordinated organisations, team leads, participants,
-                        transportation, schedules, materials and the practical
-                        details needed to make the projects work.
-                    </p>
-                </div>
-
-                <div class="case-block">
-                    <h4>Beyond the social track</h4>
-                    <p>
-                        I also managed the Co-Team and operational infrastructure
-                        behind the wider event.
-                    </p>
-
-                    <p>
-                        The core challenge was turning many people,
-                        organisations and moving parts into one functioning
-                        operation.
-                    </p>
-                </div>
-
-            </div>
-
-            <div class="case-result">
-                <strong>The bigger picture</strong>
-                The coordination had a purpose: helping hundreds of people
-                contribute to something bigger than themselves.
-            </div>
-
-        </div>
-
-    </article>
-
-
-    <!-- CASE 04 -->
-
-    <article class="case-study">
-
-        <div class="case-header">
-
-            <div>
-                <div class="case-number">CASE 04</div>
-
-                <div class="case-title">
-                    The December 31st shipment
-                </div>
-            </div>
-
-            <div class="case-tag">
-                Time-Critical Operations
-            </div>
-
-        </div>
-
-        <div class="case-body">
-
-            <div class="case-grid">
-
-                <div class="case-block">
-                    <h4>The situation</h4>
-                    <p>
-                        A year-end shipment was at risk. The container was
-                        stuck, the shipping company had problems and the
-                        bill of lading would not be ready in time.
-                    </p>
-                </div>
-
-                <div class="case-block">
-                    <h4>The challenge</h4>
-                    <p>
-                        The material needed to leave within the current year.
-                        Waiting until January wasn't acceptable.
-                    </p>
-                </div>
-
-                <div class="case-block">
-                    <h4>My response</h4>
-                    <p>
-                        I identified who could influence each part of the
-                        problem, contacted the right parties and coordinated
-                        the moving pieces.
-                    </p>
-                </div>
-
-                <div class="case-block">
-                    <h4>The bigger picture</h4>
-                    <p>
-                        Month-end and year-end repeatedly required quick
-                        decisions and constant operational coordination.
-                    </p>
-                </div>
-
-            </div>
-
-            <div class="case-result">
-                <strong>The result</strong>
-                I resolved these kinds of issues and kept shipments moving
-                toward the required deadlines.
-            </div>
-
+        <div class="testimonial-attribution">
+            <strong>Testimonial attribution to be added</strong>
+            Band / project collaborator
         </div>
 
     </article>
