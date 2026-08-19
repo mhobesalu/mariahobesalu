@@ -1,781 +1,774 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-```
-<title>Maria Hõbesalu | Problem Solver</title>
-
-<style>
-    :root {
-        --purple: #C3B1E1;
-        --purple-light: #EEE7F6;
-        --purple-dark: #8064A2;
-        --dark: #1C1A1F;
-        --grey: #68636D;
-        --background: #FAF9F7;
-        --white: #FFFFFF;
-        --border: #E4DFE8;
-    }
-
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
-
-    html {
-        scroll-behavior: smooth;
-    }
-
-    body {
-        font-family: Arial, Helvetica, sans-serif;
-        color: var(--dark);
-        background: var(--background);
-        line-height: 1.6;
-    }
-
-    nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 100;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px 7%;
-        background: rgba(250,249,247,0.92);
-        backdrop-filter: blur(12px);
-        border-bottom: 1px solid rgba(228,223,232,0.7);
-    }
-
-    .logo {
-        font-weight: 700;
-        font-size: 18px;
-    }
-
-    nav ul {
-        list-style: none;
-        display: flex;
-        gap: 28px;
-    }
-
-    nav a {
-        text-decoration: none;
-        color: var(--dark);
-        font-size: 14px;
-    }
-
-    nav a:hover {
-        color: var(--purple-dark);
-    }
-
-    /* HERO */
-
-    .hero {
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        padding: 140px 7% 100px;
-        position: relative;
-        overflow: hidden;
-        background:
-            radial-gradient(circle at 85% 25%, rgba(195,177,225,0.45), transparent 28%),
-            radial-gradient(circle at 70% 80%, rgba(238,231,246,0.9), transparent 25%),
-            var(--background);
-    }
-
-    .hero-content {
-        max-width: 1050px;
-        position: relative;
-        z-index: 2;
-    }
-
-    .eyebrow,
-    .section-label {
-        color: var(--purple-dark);
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        font-size: 12px;
-        font-weight: 700;
-    }
-
-    .eyebrow {
-        margin-bottom: 25px;
-    }
-
-    h1 {
-        font-size: clamp(65px, 10vw, 135px);
-        line-height: .87;
-        letter-spacing: -7px;
-        margin-bottom: 45px;
-    }
-
-    .highlight {
-        position: relative;
-        z-index: 1;
-    }
-
-    .highlight::after {
-        content: "";
-        position: absolute;
-        left: -7px;
-        right: -7px;
-        bottom: 6px;
-        height: 25%;
-        background: var(--purple);
-        z-index: -1;
-        border-radius: 8px;
-        transform: rotate(-1deg);
-    }
-
-    .tagline {
-        font-size: clamp(28px, 4vw, 50px);
-        line-height: 1.12;
-        letter-spacing: -1.5px;
-        max-width: 850px;
-        margin-bottom: 20px;
-    }
-
-    .role-anchor {
-        display: inline-block;
-        margin-bottom: 30px;
-        padding: 10px 16px;
-        border: 1px solid rgba(128,100,162,0.35);
-        background: rgba(238,231,246,0.75);
-        border-radius: 100px;
-        color: var(--purple-dark);
-        font-size: 14px;
-        font-weight: 700;
-    }
-
-    .role-anchor span {
-        color: var(--grey);
-        font-weight: 400;
-    }
-
-    .intro {
-        max-width: 680px;
-        font-size: 19px;
-        color: var(--grey);
-    }
-
-    .hero-shape {
-        position: absolute;
-        right: -150px;
-        top: 12%;
-        width: 580px;
-        height: 580px;
-        border-radius: 50%;
-        background: var(--purple-light);
-        opacity: .85;
-    }
-
-    .hero-shape::before {
-        content: "";
-        position: absolute;
-        width: 230px;
-        height: 230px;
-        border-radius: 50%;
-        background: var(--purple);
-        left: 70px;
-        bottom: 45px;
-        opacity: .65;
-    }
-
-    /* STATS */
-
-    .stats {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 15px;
-        margin-top: 55px;
-        max-width: 1100px;
-        position: relative;
-        z-index: 2;
-    }
-
-    .stat {
-        background: rgba(255,255,255,.72);
-        border: 1px solid rgba(228,223,232,.9);
-        border-radius: 18px;
-        padding: 23px;
-        backdrop-filter: blur(8px);
-    }
-
-    .stat-number {
-        font-size: clamp(23px, 2.5vw, 34px);
-        font-weight: 700;
-        line-height: 1;
-        letter-spacing: -1.5px;
-        margin-bottom: 9px;
-    }
-
-    .stat-label {
-        color: var(--grey);
-        font-size: 13px;
-        line-height: 1.35;
-    }
-
-    /* GENERAL */
-
-    section {
-        padding: 120px 7%;
-        border-top: 1px solid var(--border);
-    }
-
-    .section-label {
-        margin-bottom: 25px;
-    }
-
-    h2 {
-        font-size: clamp(48px, 7vw, 85px);
-        line-height: .92;
-        letter-spacing: -5px;
-        margin-bottom: 50px;
-    }
-
-    .content {
-        max-width: 850px;
-        font-size: 20px;
-    }
-
-    .content p {
-        margin-bottom: 22px;
-    }
-
-    /* ABOUT */
-
-    .about-highlight {
-        font-size: clamp(30px, 4vw, 48px);
-        line-height: 1.15;
-        max-width: 900px;
-        margin-bottom: 40px;
-        letter-spacing: -1px;
-    }
-
-    /* EXPERIENCE */
-
-    .experience {
-        max-width: 1050px;
-    }
-
-    .experience-item {
-        padding: 45px 0;
-        border-top: 1px solid var(--border);
-    }
-
-    .experience-item:last-child {
-        border-bottom: 1px solid var(--border);
-    }
-
-    .experience-meta {
-        color: var(--purple-dark);
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        font-size: 12px;
-        font-weight: 700;
-        margin-bottom: 12px;
-    }
-
-    .experience h3 {
-        font-size: clamp(28px, 4vw, 42px);
-        margin-bottom: 20px;
-        letter-spacing: -1px;
-    }
-
-    .experience p {
-        color: var(--grey);
-        font-size: 18px;
-        max-width: 850px;
-        margin-bottom: 15px;
-    }
-
-    .career-progression {
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin: 35px 0 40px;
-    }
-
-    .career-step {
-        background: var(--purple-light);
-        color: var(--purple-dark);
-        padding: 12px 18px;
-        border-radius: 100px;
-        font-size: 14px;
-        font-weight: 500;
-    }
-
-    .career-arrow {
-        color: var(--purple-dark);
-        font-size: 18px;
-    }
-
-    .experience-highlight {
-        margin-top: 30px;
-        display: inline-block;
-        background: var(--purple-light);
-        padding: 18px 25px;
-        border-radius: 14px;
-        font-size: 18px;
-    }
-
-    .experience-highlight strong {
-        color: var(--purple-dark);
-        font-size: 24px;
-    }
-
-    /* LEMONID */
-
-    .lemonid {
-        margin-top: 70px;
-        padding: 55px;
-        background: var(--white);
-        border: 1px solid var(--border);
-        border-radius: 26px;
-    }
-
-    .lemonid-label {
-        display: inline-block;
-        background: var(--purple-light);
-        color: var(--purple-dark);
-        padding: 9px 15px;
-        border-radius: 100px;
-        font-size: 11px;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 1.5px;
-        margin-bottom: 20px;
-    }
-
-    .lemonid h3 {
-        font-size: clamp(34px, 5vw, 55px);
-        line-height: 1;
-        letter-spacing: -2.5px;
-        margin-bottom: 25px;
-    }
-
-    .lemonid-lead {
-        font-size: 23px;
-        line-height: 1.25;
-        max-width: 850px;
-        margin-bottom: 35px;
-    }
-
-    .lemonid p {
-        color: var(--grey);
-        font-size: 18px;
-        max-width: 850px;
-        margin-bottom: 20px;
-    }
-
-    .project-heading {
-        margin-top: 45px;
-        margin-bottom: 20px;
-        font-size: 14px;
-        color: var(--purple-dark);
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        font-weight: 700;
-    }
-
-    .project-list {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px 25px;
-        max-width: 900px;
-    }
-
-    .project-list div {
-        padding: 15px 0;
-        border-bottom: 1px solid var(--border);
-        font-size: 16px;
-    }
-
-    .project-list strong {
-        color: var(--dark);
-    }
-
-    .project-list span {
-        color: var(--grey);
-    }
-
-    /* WHAT PEOPLE SAY */
-
-    .testimonial-intro {
-        max-width: 800px;
-        font-size: 20px;
-        color: var(--grey);
-        margin-bottom: 60px;
-    }
-
-    .testimonial {
-        background: var(--white);
-        border: 1px solid var(--border);
-        border-radius: 24px;
-        padding: 45px;
-        margin-bottom: 25px;
-        max-width: 1050px;
-    }
-
-    .testimonial-label {
-        color: var(--purple-dark);
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        font-size: 11px;
-        font-weight: 700;
-        margin-bottom: 18px;
-    }
-
-    .testimonial-quote {
-        font-size: clamp(25px, 3vw, 38px);
-        line-height: 1.2;
-        letter-spacing: -1px;
-        margin-bottom: 30px;
-    }
-
-    .testimonial-quote::before {
-        content: "“";
-        color: var(--purple);
-        font-size: 1.5em;
-        line-height: 0;
-        vertical-align: -0.15em;
-        margin-right: 5px;
-    }
-
-    .testimonial-attribution {
-        border-top: 1px solid var(--border);
-        padding-top: 20px;
-        color: var(--grey);
-        font-size: 15px;
-    }
-
-    .testimonial-attribution strong {
-        color: var(--dark);
-        display: block;
-        font-size: 17px;
-        margin-bottom: 3px;
-    }
-
-    .testimonial-story {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 45px;
-        margin-top: 25px;
-    }
-
-    .testimonial-story-block h4 {
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        font-size: 11px;
-        color: var(--purple-dark);
-        margin-bottom: 10px;
-    }
-
-    .testimonial-story-block p {
-        color: var(--grey);
-        font-size: 17px;
-        margin-bottom: 15px;
-    }
-
-    /* PURPOSE */
-
-    .purpose {
-        background: var(--dark);
-        color: var(--white);
-        border-top: none;
-    }
-
-    .purpose .section-label {
-        color: var(--purple);
-    }
-
-    .purpose h2 {
-        color: var(--white);
-    }
-
-    .purpose-intro {
-        max-width: 900px;
-        font-size: clamp(30px, 4vw, 50px);
-        line-height: 1.12;
-        letter-spacing: -1.5px;
-        margin-bottom: 40px;
-    }
-
-    .purpose-text {
-        max-width: 850px;
-        font-size: 19px;
-        color: #D8D3DB;
-    }
-
-    .purpose-text p {
-        margin-bottom: 20px;
-    }
-
-    .purpose-text strong {
-        color: var(--white);
-    }
-
-    .outcome-section {
-        max-width: 950px;
-        margin-top: 55px;
-        padding-top: 50px;
-        border-top: 1px solid #3C3840;
-    }
-
-    .outcome-section h3 {
-        font-size: clamp(32px, 4vw, 52px);
-        line-height: 1.05;
-        letter-spacing: -2px;
-        margin-bottom: 22px;
-        color: var(--white);
-    }
-
-    .outcome-lead {
-        font-size: clamp(25px, 3vw, 38px);
-        line-height: 1.15;
-        color: var(--white);
-        max-width: 850px;
-        margin-bottom: 30px;
-    }
-
-    .outcome-text {
-        max-width: 850px;
-        font-size: 19px;
-        color: #D8D3DB;
-    }
-
-    .outcome-text p {
-        margin-bottom: 18px;
-    }
-
-    .outcome-quote {
-        margin-top: 30px;
-        padding: 25px 30px;
-        border-left: 5px solid var(--purple);
-        background: #262329;
-        font-size: clamp(25px, 3vw, 38px);
-        line-height: 1.15;
-        color: var(--white);
-    }
-
-    .outcome-quote span {
-        color: var(--purple);
-    }
-
-    .corporate-section {
-        margin-top: 55px;
-        padding-top: 50px;
-        border-top: 1px solid #3C3840;
-        max-width: 950px;
-    }
-
-    .corporate-section h3 {
-        font-size: clamp(30px, 4vw, 48px);
-        line-height: 1.05;
-        letter-spacing: -1.5px;
-        color: var(--white);
-        margin-bottom: 25px;
-    }
-
-    .corporate-text {
-        max-width: 850px;
-        color: #D8D3DB;
-        font-size: 19px;
-    }
-
-    .corporate-text p {
-        margin-bottom: 18px;
-    }
-
-    .corporate-text strong {
-        color: var(--white);
-    }
-
-    .purpose-quote {
-        margin-top: 60px;
-        max-width: 900px;
-        font-size: clamp(32px, 5vw, 62px);
-        line-height: 1.02;
-        letter-spacing: -2px;
-    }
-
-    .purpose-quote span {
-        color: var(--purple);
-    }
-
-    .work-options {
-        max-width: 950px;
-        margin-top: 60px;
-        padding-top: 50px;
-        border-top: 1px solid #3C3840;
-    }
-
-    .work-options .purpose-intro {
-        margin-top: 18px;
-        margin-bottom: 30px;
-    }
-
-    /* CONTACT */
-
-    .cta {
-        background: var(--purple);
-        border: none;
-        margin: 0 7%;
-        border-radius: 30px;
-        padding: 100px 8%;
-    }
-
-    .cta h2 {
-        max-width: 700px;
-    }
-
-    .cta p {
-        font-size: 20px;
-        max-width: 650px;
-        margin-bottom: 35px;
-    }
-
-    .buttons {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 15px;
-    }
-
-    .button {
-        display: inline-block;
-        background: var(--dark);
-        color: white;
-        text-decoration: none;
-        padding: 15px 24px;
-        border-radius: 100px;
-        font-size: 14px;
-        transition: .2s;
-    }
-
-    .button:hover {
-        transform: translateY(-2px);
-        background: #000;
-    }
-
-    footer {
-        display: flex;
-        justify-content: space-between;
-        padding: 50px 7%;
-        color: var(--grey);
-        font-size: 14px;
-    }
-
-    @media(max-width:1100px) {
-
-        .stats {
-            grid-template-columns: repeat(3, 1fr);
+    <title>Maria Hõbesalu | Problem Solver</title>
+
+    <style>
+        :root {
+            --purple: #C3B1E1;
+            --purple-light: #EEE7F6;
+            --purple-dark: #8064A2;
+            --dark: #1C1A1F;
+            --grey: #68636D;
+            --background: #FAF9F7;
+            --white: #FFFFFF;
+            --border: #E4DFE8;
         }
-    }
 
-    @media(max-width:800px) {
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--dark);
+            background: var(--background);
+            line-height: 1.6;
+        }
 
         nav {
-            padding: 18px 6%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 7%;
+            background: rgba(250,249,247,0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(228,223,232,0.7);
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 18px;
         }
 
         nav ul {
-            display: none;
+            list-style: none;
+            display: flex;
+            gap: 28px;
         }
 
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: var(--purple-dark);
+        }
+
+        /* HERO */
+
         .hero {
-            padding: 125px 6% 70px;
-            min-height: auto;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 140px 7% 100px;
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 85% 25%, rgba(195,177,225,0.45), transparent 28%),
+                radial-gradient(circle at 70% 80%, rgba(238,231,246,0.9), transparent 25%),
+                var(--background);
+        }
+
+        .hero-content {
+            max-width: 950px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .eyebrow,
+        .section-label {
+            color: var(--purple-dark);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .eyebrow {
+            margin-bottom: 25px;
         }
 
         h1 {
-            letter-spacing: -4px;
+            font-size: clamp(65px, 10vw, 135px);
+            line-height: .87;
+            letter-spacing: -7px;
+            margin-bottom: 45px;
+        }
+
+        .highlight {
+            position: relative;
+            z-index: 1;
+        }
+
+        .highlight::after {
+            content: "";
+            position: absolute;
+            left: -7px;
+            right: -7px;
+            bottom: 6px;
+            height: 25%;
+            background: var(--purple);
+            z-index: -1;
+            border-radius: 8px;
+            transform: rotate(-1deg);
+        }
+
+        .tagline {
+            font-size: clamp(28px, 4vw, 50px);
+            line-height: 1.12;
+            letter-spacing: -1.5px;
+            max-width: 850px;
+            margin-bottom: 20px;
+        }
+
+        .role-anchor {
+            display: inline-block;
+            margin-bottom: 30px;
+            padding: 10px 16px;
+            border: 1px solid rgba(128,100,162,0.35);
+            background: rgba(238,231,246,0.75);
+            border-radius: 100px;
+            color: var(--purple-dark);
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .role-anchor span {
+            color: var(--grey);
+            font-weight: 400;
+        }
+
+        .intro {
+            max-width: 680px;
+            font-size: 19px;
+            color: var(--grey);
+        }
+
+        .hero-cta {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 24px;
+            background: var(--dark);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 700;
+            transition: .2s;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-2px);
+            background: #000;
         }
 
         .hero-shape {
-            width: 300px;
-            height: 300px;
-            right: -160px;
-            top: 15%;
+            position: absolute;
+            right: -150px;
+            top: 12%;
+            width: 580px;
+            height: 580px;
+            border-radius: 50%;
+            background: var(--purple-light);
+            opacity: .85;
         }
 
-        .role-anchor {
-            line-height: 1.4;
+        .hero-shape::before {
+            content: "";
+            position: absolute;
+            width: 230px;
+            height: 230px;
+            border-radius: 50%;
+            background: var(--purple);
+            left: 70px;
+            bottom: 45px;
+            opacity: .65;
         }
+
+        /* STATS */
 
         .stats {
-            grid-template-columns: repeat(2, 1fr);
-        }
-
-        section {
-            padding: 85px 6%;
-        }
-
-        .testimonial-story,
-        .project-list {
-            grid-template-columns: 1fr;
-        }
-
-        .career-progression {
-            align-items: flex-start;
-            flex-direction: column;
-        }
-
-        .career-arrow {
-            transform: rotate(90deg);
-            margin-left: 18px;
-        }
-
-        .lemonid {
-            padding: 35px 28px;
-        }
-
-        .testimonial {
-            padding: 35px 28px;
-        }
-
-        .cta {
-            margin: 0 5%;
-            padding: 70px 8%;
-        }
-
-        footer {
-            flex-direction: column;
-            gap: 10px;
-            padding: 40px 6%;
-        }
-    }
-
-    @media(max-width:480px) {
-
-        .stats {
-            grid-template-columns: 1fr;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+            margin-top: 55px;
+            max-width: 1200px;
+            position: relative;
+            z-index: 2;
         }
 
         .stat {
-            padding: 19px;
+            background: rgba(255,255,255,.72);
+            border: 1px solid rgba(228,223,232,.9);
+            border-radius: 18px;
+            padding: 23px;
+            backdrop-filter: blur(8px);
+        }
+
+        .stat-number {
+            font-size: clamp(25px, 2.5vw, 36px);
+            font-weight: 700;
+            line-height: 1;
+            letter-spacing: -1.5px;
+            margin-bottom: 9px;
+        }
+
+        .stat-label {
+            color: var(--grey);
+            font-size: 13px;
+            line-height: 1.35;
+        }
+
+        /* GENERAL */
+
+        section {
+            padding: 120px 7%;
+            border-top: 1px solid var(--border);
+        }
+
+        .section-label {
+            margin-bottom: 25px;
         }
 
         h2 {
-            letter-spacing: -3px;
+            font-size: clamp(48px, 7vw, 85px);
+            line-height: .92;
+            letter-spacing: -5px;
+            margin-bottom: 50px;
         }
 
-        .role-anchor {
-            font-size: 13px;
+        .content {
+            max-width: 850px;
+            font-size: 20px;
+        }
+
+        .content p {
+            margin-bottom: 22px;
+        }
+
+        /* ABOUT */
+
+        .about-highlight {
+            font-size: clamp(30px, 4vw, 48px);
+            line-height: 1.15;
+            max-width: 900px;
+            margin-bottom: 40px;
+            letter-spacing: -1px;
+        }
+
+        /* EXPERIENCE */
+
+        .experience {
+            max-width: 1050px;
+        }
+
+        .experience-item {
+            padding: 45px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .experience-item:last-child {
+            border-bottom: 1px solid var(--border);
+        }
+
+        .experience-meta {
+            color: var(--purple-dark);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .experience h3 {
+            font-size: clamp(28px, 4vw, 42px);
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .experience p {
+            color: var(--grey);
+            font-size: 18px;
+            max-width: 850px;
+            margin-bottom: 15px;
+        }
+
+        .career-progression {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 35px 0 40px;
+        }
+
+        .career-step {
+            background: var(--purple-light);
+            color: var(--purple-dark);
+            padding: 12px 18px;
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .career-arrow {
+            color: var(--purple-dark);
+            font-size: 18px;
+        }
+
+        .experience-highlight {
+            margin-top: 30px;
+            display: inline-block;
+            background: var(--purple-light);
+            padding: 18px 25px;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+
+        .experience-highlight strong {
+            color: var(--purple-dark);
+            font-size: 24px;
+        }
+
+        /* LEMONID */
+
+        .lemonid {
+            margin-top: 70px;
+            padding: 55px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 26px;
+        }
+
+        .lemonid-label {
+            display: inline-block;
+            background: var(--purple-light);
+            color: var(--purple-dark);
+            padding: 9px 15px;
+            border-radius: 100px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 20px;
+        }
+
+        .lemonid h3 {
+            font-size: clamp(34px, 5vw, 55px);
+            line-height: 1;
+            letter-spacing: -2.5px;
+            margin-bottom: 25px;
+        }
+
+        .lemonid-lead {
+            font-size: 23px;
+            line-height: 1.25;
+            max-width: 850px;
+            margin-bottom: 25px;
+        }
+
+        .lemonid p {
+            color: var(--grey);
+            font-size: 18px;
+            max-width: 850px;
+            margin-bottom: 20px;
+        }
+
+        .project-heading {
+            margin-top: 45px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: var(--purple-dark);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        .project-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px 25px;
+            max-width: 900px;
+        }
+
+        .project-list div {
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 16px;
+        }
+
+        .project-list strong {
+            color: var(--dark);
+        }
+
+        .project-list span {
+            color: var(--grey);
+        }
+
+        /* WHAT PEOPLE SAY */
+
+        .testimonial-intro {
+            max-width: 750px;
+            font-size: 20px;
+            color: var(--grey);
+            margin-bottom: 60px;
+        }
+
+        .testimonial {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            margin-bottom: 25px;
+            padding: 42px;
+        }
+
+        .testimonial-label {
+            color: var(--purple-dark);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
         }
 
         .testimonial-quote {
-            font-size: 25px;
+            font-size: clamp(24px, 3vw, 36px);
+            line-height: 1.2;
+            letter-spacing: -1px;
+            max-width: 950px;
+            margin-bottom: 30px;
         }
-    }
-</style>
-```
 
+        .testimonial-quote::before {
+            content: "“";
+            color: var(--purple);
+            font-size: 1.5em;
+            line-height: 0;
+            vertical-align: -0.15em;
+            margin-right: 5px;
+        }
+
+        .testimonial-author {
+            border-top: 1px solid var(--border);
+            padding-top: 20px;
+            color: var(--grey);
+            font-size: 15px;
+        }
+
+        .testimonial-author strong {
+            display: block;
+            color: var(--dark);
+            font-size: 17px;
+            margin-bottom: 3px;
+        }
+
+        /* PURPOSE */
+
+        .purpose {
+            background: var(--dark);
+            color: var(--white);
+            border-top: none;
+        }
+
+        .purpose .section-label {
+            color: var(--purple);
+        }
+
+        .purpose h2 {
+            color: var(--white);
+        }
+
+        .purpose-intro {
+            max-width: 900px;
+            font-size: clamp(30px, 4vw, 50px);
+            line-height: 1.12;
+            letter-spacing: -1.5px;
+            margin-bottom: 40px;
+        }
+
+        .purpose-text {
+            max-width: 850px;
+            font-size: 19px;
+            color: #D8D3DB;
+        }
+
+        .purpose-text p {
+            margin-bottom: 20px;
+        }
+
+        .purpose-text strong {
+            color: var(--white);
+        }
+
+        .outcome-section {
+            max-width: 950px;
+            margin-top: 55px;
+            padding-top: 50px;
+            border-top: 1px solid #3C3840;
+        }
+
+        .outcome-section h3 {
+            font-size: clamp(32px, 4vw, 52px);
+            line-height: 1.05;
+            letter-spacing: -2px;
+            margin-bottom: 22px;
+            color: var(--white);
+        }
+
+        .outcome-lead {
+            font-size: clamp(25px, 3vw, 38px);
+            line-height: 1.15;
+            color: var(--white);
+            max-width: 850px;
+            margin-bottom: 30px;
+        }
+
+        .outcome-text {
+            max-width: 850px;
+            font-size: 19px;
+            color: #D8D3DB;
+        }
+
+        .outcome-text p {
+            margin-bottom: 18px;
+        }
+
+        .outcome-quote {
+            margin-top: 30px;
+            padding: 25px 30px;
+            border-left: 5px solid var(--purple);
+            background: #262329;
+            font-size: clamp(25px, 3vw, 38px);
+            line-height: 1.15;
+            color: var(--white);
+        }
+
+        .outcome-quote span {
+            color: var(--purple);
+        }
+
+        .corporate-section {
+            margin-top: 55px;
+            padding-top: 50px;
+            border-top: 1px solid #3C3840;
+            max-width: 950px;
+        }
+
+        .corporate-section h3 {
+            font-size: clamp(30px, 4vw, 48px);
+            line-height: 1.05;
+            letter-spacing: -1.5px;
+            color: var(--white);
+            margin-bottom: 25px;
+        }
+
+        .corporate-text {
+            max-width: 850px;
+            color: #D8D3DB;
+            font-size: 19px;
+        }
+
+        .corporate-text p {
+            margin-bottom: 18px;
+        }
+
+        .corporate-text strong {
+            color: var(--white);
+        }
+
+        .purpose-quote {
+            margin-top: 60px;
+            max-width: 900px;
+            font-size: clamp(32px, 5vw, 62px);
+            line-height: 1.02;
+            letter-spacing: -2px;
+        }
+
+        .purpose-quote span {
+            color: var(--purple);
+        }
+
+        .work-options {
+            max-width: 950px;
+            margin-top: 60px;
+            padding-top: 50px;
+            border-top: 1px solid #3C3840;
+        }
+
+        .work-options .purpose-intro {
+            margin-top: 18px;
+            margin-bottom: 30px;
+        }
+
+        /* CONTACT */
+
+        .cta {
+            background: var(--purple);
+            border: none;
+            margin: 0 7%;
+            border-radius: 30px;
+            padding: 100px 8%;
+        }
+
+        .cta h2 {
+            max-width: 700px;
+        }
+
+        .cta p {
+            font-size: 20px;
+            max-width: 650px;
+            margin-bottom: 35px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .button {
+            display: inline-block;
+            background: var(--dark);
+            color: white;
+            text-decoration: none;
+            padding: 15px 24px;
+            border-radius: 100px;
+            font-size: 14px;
+            transition: .2s;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            background: #000;
+        }
+
+        footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 50px 7%;
+            color: var(--grey);
+            font-size: 14px;
+        }
+
+        @media(max-width:1100px) {
+
+            .stats {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media(max-width:800px) {
+
+            nav {
+                padding: 18px 6%;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .hero {
+                padding: 125px 6% 70px;
+                min-height: auto;
+            }
+
+            h1 {
+                letter-spacing: -4px;
+            }
+
+            .hero-shape {
+                width: 300px;
+                height: 300px;
+                right: -160px;
+                top: 15%;
+            }
+
+            .role-anchor {
+                line-height: 1.4;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            section {
+                padding: 85px 6%;
+            }
+
+            .case-grid,
+            .project-list {
+                grid-template-columns: 1fr;
+            }
+
+            .career-progression {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .career-arrow {
+                transform: rotate(90deg);
+                margin-left: 18px;
+            }
+
+            .lemonid {
+                padding: 35px 28px;
+            }
+
+            .testimonial {
+                padding: 30px;
+            }
+
+            .cta {
+                margin: 0 5%;
+                padding: 70px 8%;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 10px;
+                padding: 40px 6%;
+            }
+        }
+
+        @media(max-width:480px) {
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .stat {
+                padding: 19px;
+            }
+
+            h2 {
+                letter-spacing: -3px;
+            }
+
+            .role-anchor {
+                font-size: 13px;
+            }
+
+            .testimonial {
+                padding: 25px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -783,716 +776,704 @@
 <nav>
     <div class="logo">MH.</div>
 
-```
-<ul>
-    <li><a href="#about">About</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#testimonials">What People Say</a></li>
-    <li><a href="#purpose">What I Want</a></li>
-    <li><a href="#contact">Contact</a></li>
-</ul>
-```
-
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#testimonials">What People Say</a></li>
+        <li><a href="#purpose">What I Want</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
 </nav>
+
 
 <!-- HERO -->
 
 <header class="hero">
 
-```
-<div class="hero-content">
+    <div class="hero-content">
 
-    <div class="eyebrow">
-        Problem Solver • Operations • People Leadership
+        <div class="eyebrow">
+            Problem Solver • Operations • People Leadership
+        </div>
+
+        <h1>
+            Maria<br>
+            <span class="highlight">Hõbesalu</span>
+        </h1>
+
+        <div class="tagline">
+            I solve problems that don't have obvious solutions.
+        </div>
+
+        <div class="role-anchor">
+            Roles I'd fit:
+            <span>Head of Operations • General Manager • Chief of Staff</span>
+        </div>
+
+        <p class="intro">
+            Give me a complicated situation, difficult project or problem
+            nobody knows how to solve. I'll figure out what needs to happen next.
+        </p>
+
+        <a href="#contact" class="hero-cta">
+            Get in Touch →
+        </a>
+
+        <div class="stats">
+
+            <div class="stat">
+                <div class="stat-number">20+</div>
+                <div class="stat-label">
+                    People overseen across operational functions
+                </div>
+            </div>
+
+            <div class="stat">
+                <div class="stat-number">$1M → $20M</div>
+                <div class="stat-label">
+                    Annual revenue growth at KatMetal
+                </div>
+            </div>
+
+            <div class="stat">
+                <div class="stat-number">8+ yrs</div>
+                <div class="stat-label">
+                    Progressing through four roles at KatMetal
+                </div>
+            </div>
+
+            <div class="stat">
+                <div class="stat-number">10+ yrs</div>
+                <div class="stat-label">
+                    Project, service and operational work
+                </div>
+            </div>
+
+            <div class="stat">
+                <div class="stat-number">Markets</div>
+                <div class="stat-label">
+                    Experience including Brazil • Israel • Japan • Egypt • Turkey
+                </div>
+            </div>
+
+        </div>
+
     </div>
 
-    <h1>
-        Maria<br>
-        <span class="highlight">Hõbesalu</span>
-    </h1>
-
-    <div class="tagline">
-        I solve problems that don't have obvious solutions.
-    </div>
-
-    <div class="role-anchor">
-        Roles I'd fit:
-        <span>Head of Operations • General Manager • Chief of Staff</span>
-    </div>
-
-    <p class="intro">
-        Give me a complicated situation, difficult project or problem
-        nobody knows how to solve. I'll figure out what needs to happen next.
-    </p>
-
-    <div class="stats">
-
-        <div class="stat">
-            <div class="stat-number">20+</div>
-            <div class="stat-label">
-                People overseen across operational functions
-            </div>
-        </div>
-
-        <div class="stat">
-            <div class="stat-number">$1M → $20M</div>
-            <div class="stat-label">
-                Annual revenue growth at KatMetal
-            </div>
-        </div>
-
-        <div class="stat">
-            <div class="stat-number">8+ yrs</div>
-            <div class="stat-label">
-                Progressing through four roles at KatMetal
-            </div>
-        </div>
-
-        <div class="stat">
-            <div class="stat-number">10+ yrs</div>
-            <div class="stat-label">
-                Project, service and operational work
-            </div>
-        </div>
-
-        <div class="stat">
-            <div class="stat-number">Global</div>
-            <div class="stat-label">
-                Markets I've worked with: Brazil • Israel • Japan • Egypt • Turkey
-            </div>
-        </div>
-
-    </div>
-
-</div>
-
-<div class="hero-shape"></div>
-```
+    <div class="hero-shape"></div>
 
 </header>
+
 
 <!-- ABOUT -->
 
 <section id="about">
 
-```
-<div class="section-label">
-    01 — About
-</div>
-
-<h2>
-    Give me the mess.<br>
-    I'll figure it out.
-</h2>
-
-<div class="content">
-
-    <div class="about-highlight">
-        I work best when things are complicated, moving quickly and
-        there isn't an obvious answer.
+    <div class="section-label">
+        01 — About
     </div>
 
-    <p>
-        My background combines people leadership, international
-        operations, logistics, project coordination and commercial
-        environments.
-    </p>
+    <h2>
+        Give me the mess.<br>
+        I'll figure it out.
+    </h2>
 
-    <p>
-        The common thread has always been taking ownership when
-        something needs to be figured out.
-    </p>
+    <div class="content">
 
-    <p>
-        I'm comfortable in structured organisations, growing companies
-        and situations where the structure is still being built.
-        What matters is having a meaningful outcome and enough ownership
-        to make it happen.
-    </p>
+        <div class="about-highlight">
+            I work best when things are complicated, moving quickly and
+            there isn't an obvious answer.
+        </div>
 
-</div>
-```
+        <p>
+            My background combines people leadership, international
+            operations, logistics, project coordination and commercial
+            environments.
+        </p>
+
+        <p>
+            The common thread has always been taking ownership when
+            something needs to be figured out.
+        </p>
+
+        <p>
+            I'm comfortable in structured organisations, growing companies
+            and situations where the structure is still being built.
+            What matters is having a meaningful outcome and enough ownership
+            to make it happen.
+        </p>
+
+    </div>
 
 </section>
+
 
 <!-- EXPERIENCE -->
 
 <section id="experience">
 
-```
-<div class="section-label">
-    02 — Experience
-</div>
-
-<h2>
-    Where I've<br>
-    grown into it.
-</h2>
-
-<div class="experience">
-
-    <div class="experience-item">
-
-        <div class="experience-meta">
-            KatMetal Estonia • 2017 — 2025
-        </div>
-
-        <h3>
-            Increasing responsibility, broader ownership
-        </h3>
-
-        <div class="career-progression">
-
-            <div class="career-step">Assistant</div>
-
-            <div class="career-arrow">→</div>
-
-            <div class="career-step">Key Account Manager</div>
-
-            <div class="career-arrow">→</div>
-
-            <div class="career-step">Business Manager</div>
-
-            <div class="career-arrow">→</div>
-
-            <div class="career-step">Business Development Manager</div>
-
-        </div>
-
-        <p>
-            I joined KatMetal as an Assistant and progressed through
-            four roles over eight years, taking on broader responsibility
-            across international clients, commercial operations, logistics
-            and people leadership.
-        </p>
-
-        <p>
-            In my final role, I led international business development
-            and commercial operations while overseeing a 20+ person
-            environment across office, logistics and warehouse functions.
-        </p>
-
-        <p>
-            The work involved international markets, client relationships,
-            logistics and keeping the operation moving when things became
-            complicated.
-        </p>
-
-        <div class="experience-highlight">
-            Annual revenue grew from approximately
-            <strong>$1M → $20M</strong> over seven years.
-        </div>
-
+    <div class="section-label">
+        02 — Experience
     </div>
 
+    <h2>
+        Where I've<br>
+        grown into it.
+    </h2>
 
-    <!-- LEMONID -->
+    <div class="experience">
 
-    <div class="lemonid">
+        <div class="experience-item">
 
-        <div class="lemonid-label">
-            Founder • Service & Project Work
-        </div>
-
-        <h3>
-            LeMonID Ltd
-        </h3>
-
-        <div class="lemonid-lead">
-            Project, production, coordination and consulting work across
-            events, organisations and business projects.
-        </div>
-
-        <div class="project-heading">
-            Selected projects & clients
-        </div>
-
-        <div class="project-list">
-
-            <div>
-                <strong>COP23</strong><br>
-                <span>Jolos • Bonn • International event project</span>
+            <div class="experience-meta">
+                KatMetal Estonia • 2017 — 2025
             </div>
 
-            <div>
-                <strong>Wise Summer Days</strong><br>
-                <span>Jolos / LeMonID • Multiple years • Social-impact track & event operations</span>
+            <h3>
+                Increasing responsibility, broader ownership
+            </h3>
+
+            <div class="career-progression">
+
+                <div class="career-step">Assistant</div>
+
+                <div class="career-arrow">→</div>
+
+                <div class="career-step">Key Account Manager</div>
+
+                <div class="career-arrow">→</div>
+
+                <div class="career-step">Business Manager</div>
+
+                <div class="career-arrow">→</div>
+
+                <div class="career-step">Business Development Manager</div>
+
             </div>
 
-            <div>
-                <strong>Wise Mission Days</strong><br>
-                <span>LeMonID • 2020 • Directly engaged by Wise</span>
-            </div>
+            <p>
+                I joined KatMetal as an Assistant and progressed through
+                four roles over eight years, taking on broader responsibility
+                across international clients, commercial operations, logistics
+                and people leadership.
+            </p>
 
-            <div>
-                <strong>Bolt Summer Summit '21</strong><br>
-                <span>Jolos / LeMonID • Tartu • ~700 participants</span>
-            </div>
+            <p>
+                In my final role, I led international business development
+                and commercial operations while overseeing a 20+ person
+                environment across office, logistics and warehouse functions.
+            </p>
 
-            <div>
-                <strong>Nortal Party Night</strong><br>
-                <span>LeMonID / event production • 2018</span>
-            </div>
+            <p>
+                The work involved international markets, client relationships,
+                logistics and keeping the operation moving when things became
+                complicated.
+            </p>
 
-            <div>
-                <strong>Swedbank Annual Gala</strong><br>
-                <span>LeMonID / event production • 2018</span>
-            </div>
-
-            <div>
-                <strong>Estonian Cultural Days in New York</strong><br>
-                <span>LeMonID • April 2017</span>
-            </div>
-
-            <div>
-                <strong>Fair "Interior" / Sisustusmess</strong><br>
-                <span>LeMonID • Organisation support • April 2017</span>
-            </div>
-
-            <div>
-                <strong>Baumer Impact Consulting</strong><br>
-                <span>LeMonID • Project management & technical coordination</span>
+            <div class="experience-highlight">
+                Annual revenue grew from approximately
+                <strong>$1M → $20M</strong> over seven years.
             </div>
 
         </div>
 
-        <div class="project-heading">
-            Selected Baumer projects
-        </div>
 
-        <div class="project-list">
+        <!-- LEMONID -->
 
-            <div>
-                <strong>Horses Help</strong><br>
-                <span>Project / technical work for EAGALA</span>
+        <div class="lemonid">
+
+            <div class="lemonid-label">
+                Founder • Service & Project Work
             </div>
 
-            <div>
-                <strong>Effect.org</strong><br>
-                <span>Project management & technical coordination</span>
+            <h3>
+                LeMonID Ltd
+            </h3>
+
+            <div class="lemonid-lead">
+                Project, production, coordination and consulting work across
+                events, organisations and business projects.
             </div>
 
-            <div>
-                <strong>InFLEWence Trips</strong><br>
-                <span>Project management</span>
+            <div class="project-heading">
+                Selected projects & clients
             </div>
 
-            <div>
-                <strong>Every Child Needs a Family</strong><br>
-                <span>NGO project</span>
+            <div class="project-list">
+
+                <div>
+                    <strong>Wise Summer Days</strong><br>
+                    <span>Multiple years • Social-impact track & event operations</span>
+                </div>
+
+                <div>
+                    <strong>Wise Mission Days</strong><br>
+                    <span>2020 • Directly engaged by Wise</span>
+                </div>
+
+                <div>
+                    <strong>COP23</strong><br>
+                    <span>Jolos • Bonn</span>
+                </div>
+
+                <div>
+                    <strong>Bolt Summer Summit '21</strong><br>
+                    <span>Jolos • Tartu • ~700 participants</span>
+                </div>
+
+                <div>
+                    <strong>Nortal Party Night</strong><br>
+                    <span>Event production • 2018</span>
+                </div>
+
+                <div>
+                    <strong>Swedbank Annual Gala</strong><br>
+                    <span>Event production • 2018</span>
+                </div>
+
+                <div>
+                    <strong>Estonian Cultural Days in New York</strong><br>
+                    <span>April 2017</span>
+                </div>
+
             </div>
 
-            <div>
-                <strong>Free to Believe</strong><br>
-                <span>Production / project work</span>
+            <div class="project-heading">
+                Selected Baumer Impact projects
+            </div>
+
+            <div class="project-list">
+
+                <div>
+                    <strong>Horses Help</strong><br>
+                    <span>Project / technical work for EAGALA</span>
+                </div>
+
+                <div>
+                    <strong>Effect.org</strong><br>
+                    <span>Project management & technical coordination</span>
+                </div>
+
+                <div>
+                    <strong>InFLEWence Trips</strong><br>
+                    <span>Project management</span>
+                </div>
+
+                <div>
+                    <strong>Every Child Needs a Family</strong><br>
+                    <span>NGO project</span>
+                </div>
+
+                <div>
+                    <strong>Free to Believe</strong><br>
+                    <span>Production / project work</span>
+                </div>
+
             </div>
 
         </div>
 
     </div>
-
-</div>
-```
 
 </section>
+
 
 <!-- WHAT PEOPLE SAY -->
 
 <section id="testimonials">
 
-```
-<div class="section-label">
-    03 — What People Say
-</div>
-
-<h2>
-    Don't just<br>
-    take my word for it.
-</h2>
-
-<p class="testimonial-intro">
-    The best description of how I work often comes from the people
-    who have worked alongside me.
-</p>
-
-
-<!-- TESTIMONIAL 01 -->
-
-<article class="testimonial">
-
-    <div class="testimonial-label">
-        Leadership & People
+    <div class="section-label">
+        03 — What People Say
     </div>
 
-    <div class="testimonial-quote">
-        Maria is fantastic to work with. She is a strong leader who knows
-        how to engage, motivate, and bring out the best in everyone on her
-        team. She is exceptionally organized and detail-oriented, with the
-        rare ability to see the big picture while also being willing to dive
-        into the weeds and make things happen. Maria has tremendous
-        integrity, an incredible work ethic, and always follows through on
-        her commitments. I would highly recommend her to anyone fortunate
-        enough to have the opportunity to work with her.
-    </div>
+    <h2>
+        Better to hear<br>
+        it from them.
+    </h2>
 
-    <div class="testimonial-attribution">
-        <strong>Jacqueline Baumers</strong>
-        CEO & Founder, Baumer Impact
-    </div>
-
-</article>
+    <p class="testimonial-intro">
+        The best way to understand how I work is sometimes to hear it
+        from the people who have worked alongside me.
+    </p>
 
 
-<!-- TESTIMONIAL 02 -->
+    <!-- TESTIMONIAL 01 -->
 
-<article class="testimonial">
+    <article class="testimonial">
 
-    <div class="testimonial-label">
-        Crisis Problem Solving
-    </div>
-
-    <div class="testimonial-quote">
-        The band had a concert in Israel, but the security situation
-        changed and flights from Europe were being cancelled. Maria took
-        ownership of the situation, rebuilt the travel plan person by
-        person, found alternative routes and kept coordinating as the
-        situation changed. Even when people became stranded in different
-        countries, she kept solving the next problem. Within roughly
-        24 hours, almost the entire band had made it to Israel and the
-        concert happened.
-    </div>
-
-    <div class="testimonial-story">
-
-        <div class="testimonial-story-block">
-            <h4>The situation</h4>
-
-            <p>
-                A band from Estonia was scheduled to perform in Israel
-                when the security situation changed and flights from
-                Europe were cancelled.
-            </p>
+        <div class="testimonial-label">
+            Leadership • Teamwork • Execution
         </div>
 
-        <div class="testimonial-story-block">
-            <h4>What happened</h4>
-
-            <p>
-                Routes had to be rebuilt repeatedly, including one person
-                becoming stranded in Warsaw and another route having to
-                go through Greece.
-            </p>
+        <div class="testimonial-quote">
+            Maria is fantastic to work with. She is a strong leader who knows
+            how to engage, motivate, and bring out the best in everyone on her
+            team. She is exceptionally organized and detail-oriented, with the
+            rare ability to see the big picture while also being willing to dive
+            into the weeds and make things happen. Maria has tremendous
+            integrity, an incredible work ethic, and always follows through on
+            her commitments. I would highly recommend her to anyone fortunate
+            enough to have the opportunity to work with her.
         </div>
 
-    </div>
+        <div class="testimonial-author">
+            <strong>Jacqueline Baumer</strong>
+            CEO & Founder, Baumer Impact
+        </div>
 
-    <div class="testimonial-attribution">
-        <strong>Tõnu Laikre</strong>
-        Band's Musical Director
-    </div>
+    </article>
 
-</article>
-```
+
+    <!-- TESTIMONIAL 02 -->
+
+    <article class="testimonial">
+
+        <div class="testimonial-label">
+            Crisis Problem Solving
+        </div>
+
+        <div class="testimonial-quote">
+            I was responsible for the band's musical direction when we had
+            a concert in Israel and the security situation suddenly changed.
+            Flights from Europe were being cancelled and the original travel
+            plan was falling apart. Maria took over the problem, worked through
+            the routes person by person, and kept rebuilding the plan as
+            circumstances changed. When one person became stranded in Warsaw
+            and another route had to go through Greece, she simply found the
+            next solution. She managed to get almost the entire band to Israel
+            and the concert happened.
+        </div>
+
+        <div class="testimonial-author">
+            <strong>Tõnu Laikre</strong>
+            Band's Musical Director
+        </div>
+
+    </article>
+
+
+    <!-- TESTIMONIAL 03 -->
+
+    <article class="testimonial">
+
+        <div class="testimonial-label">
+            More to come
+        </div>
+
+        <div class="testimonial-quote">
+            More stories from people I've worked with will be added here.
+        </div>
+
+        <div class="testimonial-author">
+            <strong>Coming soon</strong>
+            Additional professional references
+        </div>
+
+    </article>
 
 </section>
+
 
 <!-- WHAT I'M LOOKING FOR -->
 
 <section id="purpose" class="purpose">
 
-```
-<div class="section-label">
-    04 — What I'm looking for
-</div>
-
-<h2>
-    I don't just want<br>
-    a job.
-</h2>
-
-<div class="purpose-intro">
-    I want a reason to care.
-</div>
-
-<div class="purpose-text">
-
-    <p>
-        I've spent much of my career solving problems, coordinating
-        people and making complicated things work. The work itself
-        doesn't have to be extraordinary if the outcome matters.
-    </p>
-
-    <p>
-        That could mean a company solving a difficult problem, a team
-        building something useful or an organisation becoming better.
-    </p>
-
-    <p>
-        What matters is understanding <strong>why the work matters</strong>
-        and working with people who genuinely care about achieving it.
-    </p>
-
-</div>
-
-
-<!-- OUTCOME -->
-
-<div class="outcome-section">
-
     <div class="section-label">
-        Outcome over role
+        04 — What I'm looking for
     </div>
 
-    <h3>
-        I don't need a clearly defined role.
-    </h3>
-
-    <div class="outcome-lead">
-        I need a clearly defined outcome.
-    </div>
-
-    <div class="outcome-text">
-
-        <p>
-            I'm most useful when the destination is clear but the route isn't.
-        </p>
-
-        <p>
-            Give me a problem, objective, team that needs direction or
-            complicated situation. I don't need every step mapped out.
-        </p>
-
-        <p>
-            <strong>
-                I need to understand what we're trying to achieve —
-                then I'll figure out what needs to happen.
-            </strong>
-        </p>
-
-        <p>
-            That might mean fixing an operational problem, building a
-            team, owning a project, connecting departments or figuring
-            out the next move.
-        </p>
-
-    </div>
-
-    <div class="outcome-quote">
-        Don't tell me exactly how to get there.<br><br>
-
-        <span>
-            Tell me where we're going and why it matters.
-        </span>
-    </div>
-
-</div>
-
-
-<!-- CORPORATE POSITIONING -->
-
-<div class="corporate-section">
-
-    <div class="section-label">
-        And yes — that includes corporations
-    </div>
-
-    <h3>
-        Structure and autonomy aren't opposites.
-    </h3>
-
-    <div class="corporate-text">
-
-        <p>
-            I can see myself working inside a large international
-            organisation. Complexity is often exactly where I can be useful.
-        </p>
-
-        <p>
-            I like connecting teams, navigating stakeholders, finding
-            gaps between departments and owning problems that don't fit
-            neatly into one job description.
-        </p>
-
-        <p>
-            I don't need chaos. I just don't want to be limited by a
-            job description when the situation requires something more.
-        </p>
-
-        <p>
-            The same applies to a startup or growing company.
-            <strong>
-                Size matters less than having room to take ownership
-                and make something better.
-            </strong>
-        </p>
-
-    </div>
-
-</div>
-
-
-<!-- GROWTH -->
-
-<div class="corporate-section">
-
-    <div class="section-label">
-        Where I can make the biggest difference
-    </div>
-
-    <h3>
-        When something is about to become bigger than it currently is.
-    </h3>
-
-    <div class="corporate-text">
-
-        <p>
-            I think I would be especially useful at a company that is
-            taking off and needs someone to push the next big move.
-        </p>
-
-        <p>
-            The product works, the opportunity is real, momentum is building,
-            but the next stage isn't completely figured out yet.
-        </p>
-
-        <p>
-            That's where I get excited.
-        </p>
-
-        <p>
-            Give me momentum, a difficult goal and moving pieces, and let
-            me figure out how to push things to the next level.
-        </p>
-
-        <p>
-            I like being close to the action: figuring out what needs to
-            happen, bringing people together, building structure and
-            turning <strong>“we should”</strong> into
-            <strong>“it's done.”</strong>
-        </p>
-
-    </div>
-
-</div>
-
-
-<!-- CLOSING -->
-
-<div class="purpose-quote">
-
-    Give me a difficult problem.<br>
-    Give me good people.<br>
-    Give us something <span>worth achieving.</span>
-
-    <div style="
-        font-size: 0.55em;
-        margin-top: 35px;
-        line-height: 1.15;
-        color: #D8D3DB;
-    ">
-        I'll care about making it happen.
-    </div>
-
-</div>
-
-
-<!-- WORK OPTIONS -->
-
-<div class="work-options">
-
-    <div class="section-label">
-        Another way to work together
-    </div>
+    <h2>
+        I don't just want<br>
+        a job.
+    </h2>
 
     <div class="purpose-intro">
-        It doesn't have to be a full-time job.
+        I want a reason to care.
     </div>
 
     <div class="purpose-text">
 
         <p>
-            I'm also open to working on a
-            <strong>project or service basis.</strong>
+            I've spent much of my career solving problems, coordinating
+            people and making complicated things work. The work itself
+            doesn't have to be extraordinary if the outcome matters.
         </p>
 
         <p>
-            Through my own companies, I can provide services and invoice
-            clients. If you have a difficult project, operational problem
-            or transition that needs ownership, I can step in and help.
+            That could mean a company solving a difficult problem, a team
+            building something useful or an organisation becoming better.
         </p>
 
         <p>
-            Sometimes you need a permanent person. Sometimes you need
-            someone who can walk into the mess, understand the outcome
-            and take ownership of getting there.
-        </p>
-
-        <p>
-            I'm happy to be that person.
+            What matters is understanding <strong>why the work matters</strong>
+            and working with people who genuinely care about achieving it.
         </p>
 
     </div>
 
-</div>
-```
+
+    <!-- OUTCOME -->
+
+    <div class="outcome-section">
+
+        <div class="section-label">
+            Outcome over role
+        </div>
+
+        <h3>
+            I don't need a clearly defined role.
+        </h3>
+
+        <div class="outcome-lead">
+            I need a clearly defined outcome.
+        </div>
+
+        <div class="outcome-text">
+
+            <p>
+                I'm most useful when the destination is clear but the route isn't.
+            </p>
+
+            <p>
+                Give me a problem, objective, team that needs direction or
+                complicated situation. I don't need every step mapped out.
+            </p>
+
+            <p>
+                <strong>
+                    I need to understand what we're trying to achieve —
+                    then I'll figure out what needs to happen.
+                </strong>
+            </p>
+
+            <p>
+                That might mean fixing an operational problem, building a
+                team, owning a project, connecting departments or figuring
+                out the next move.
+            </p>
+
+        </div>
+
+        <div class="outcome-quote">
+            Don't tell me exactly how to get there.<br><br>
+
+            <span>
+                Tell me where we're going and why it matters.
+            </span>
+        </div>
+
+    </div>
+
+
+    <!-- CORPORATE POSITIONING -->
+
+    <div class="corporate-section">
+
+        <div class="section-label">
+            And yes — that includes corporations
+        </div>
+
+        <h3>
+            Structure and autonomy aren't opposites.
+        </h3>
+
+        <div class="corporate-text">
+
+            <p>
+                I can see myself working inside a large international
+                organisation. Complexity is often exactly where I can be useful.
+            </p>
+
+            <p>
+                I like connecting teams, navigating stakeholders, finding
+                gaps between departments and owning problems that don't fit
+                neatly into one job description.
+            </p>
+
+            <p>
+                I don't need chaos. I just don't want to be limited by a
+                job description when the situation requires something more.
+            </p>
+
+            <p>
+                The same applies to a startup or growing company.
+                <strong>
+                    Size matters less than having room to take ownership
+                    and make something better.
+                </strong>
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- GROWTH -->
+
+    <div class="corporate-section">
+
+        <div class="section-label">
+            Where I can make the biggest difference
+        </div>
+
+        <h3>
+            When something is about to become bigger than it currently is.
+        </h3>
+
+        <div class="corporate-text">
+
+            <p>
+                I think I would be especially useful at a company that is
+                taking off and needs someone to push the next big move.
+            </p>
+
+            <p>
+                The product works, the opportunity is real, momentum is building,
+                but the next stage isn't completely figured out yet.
+            </p>
+
+            <p>
+                That's where I get excited.
+            </p>
+
+            <p>
+                Give me momentum, a difficult goal and moving pieces, and let
+                me figure out how to push things to the next level.
+            </p>
+
+            <p>
+                I like being close to the action: figuring out what needs to
+                happen, bringing people together, building structure and
+                turning <strong>“we should”</strong> into
+                <strong>“it's done.”</strong>
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- CLOSING -->
+
+    <div class="purpose-quote">
+
+        Give me a difficult problem.<br>
+        Give me good people.<br>
+        Give us something <span>worth achieving.</span>
+
+        <div style="
+            font-size: 0.55em;
+            margin-top: 35px;
+            line-height: 1.15;
+            color: #D8D3DB;
+        ">
+            I'll care about making it happen.
+        </div>
+
+    </div>
+
+
+    <!-- WORK OPTIONS -->
+
+    <div class="work-options">
+
+        <div class="section-label">
+            Another way to work together
+        </div>
+
+        <div class="purpose-intro">
+            It doesn't have to be a full-time job.
+        </div>
+
+        <div class="purpose-text">
+
+            <p>
+                I'm also open to working on a
+                <strong>project or service basis.</strong>
+            </p>
+
+            <p>
+                Through my own companies, I can provide services and invoice
+                clients. If you have a difficult project, operational problem
+                or transition that needs ownership, I can step in and help.
+            </p>
+
+            <p>
+                Sometimes you need a permanent person. Sometimes you need
+                someone who can walk into the mess, understand the outcome
+                and take ownership of getting there.
+            </p>
+
+            <p>
+                I'm happy to be that person.
+            </p>
+
+        </div>
+
+    </div>
 
 </section>
+
 
 <!-- CONTACT -->
 
 <section id="contact" class="cta">
 
-```
-<div class="section-label">
-    05 — Let's talk
-</div>
+    <div class="section-label">
+        05 — Let's talk
+    </div>
 
-<h2>
-    Have a problem<br>
-    to solve?
-</h2>
+    <h2>
+        Have a problem<br>
+        to solve?
+    </h2>
 
-<p>
-    Whether you need someone to join your team or step in and solve
-    a specific problem, I'd love to hear what you're working on.
-</p>
+    <p>
+        Whether you need someone to join your team or step in and solve
+        a specific problem, I'd love to hear what you're working on.
+    </p>
 
-<div class="buttons">
+    <div class="buttons">
 
-    <a
-        class="button"
-        href="https://www.linkedin.com/in/maria-hõbesalu-2a1014187"
-        target="_blank"
-        rel="noopener noreferrer"
-    >
-        LinkedIn →
-    </a>
+        <a
+            class="button"
+            href="https://www.linkedin.com/in/maria-hõbesalu-2a1014187"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            LinkedIn →
+        </a>
 
-    <a
-        class="button"
-        href="mailto:mhobesalu@gmail.com"
-    >
-        mhobesalu@gmail.com →
-    </a>
+        <a
+            class="button"
+            href="mailto:mhobesalu@gmail.com"
+        >
+            Email →
+        </a>
 
-</div>
-```
+        <a
+            class="button"
+            href="tel:+37258262802"
+        >
+            Phone →
+        </a>
+
+    </div>
 
 </section>
+
 
 <!-- FOOTER -->
 
 <footer>
 
-```
-<div>
-    © 2026 Maria Hõbesalu
-</div>
+    <div>
+        © 2026 Maria Hõbesalu
+    </div>
 
-<div>
-    Tallinn, Estonia
-</div>
-```
+    <div>
+        Tallinn, Estonia
+    </div>
 
 </footer>
 
